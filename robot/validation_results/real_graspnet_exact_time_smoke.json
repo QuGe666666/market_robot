@@ -1,0 +1,52 @@
+{
+  "camera_pose": {
+    "frame_id": "right_camera_color_optical_frame",
+    "orientation_xyzw": [
+      -0.34845210487023304,
+      -0.396519838077106,
+      -0.5606476398440305,
+      0.637986968957931
+    ],
+    "position": [
+      -0.22274227440357208,
+      0.0998811423778534,
+      0.5680000185966492
+    ],
+    "stamp": {
+      "nanosec": 704305908,
+      "sec": 1787223236
+    }
+  },
+  "exact_timestamp_match": true,
+  "graspnet": {
+    "candidate_count": 6,
+    "depth_m": 0.029999999329447746,
+    "inference_time_ms": 728.0687239981489,
+    "score": 1.1434693336486816,
+    "selected_rank": 1,
+    "status": "GRASPNET_VALID",
+    "width_m": 0.08474548906087875
+  },
+  "plan_triggered": false,
+  "prompt": "cup",
+  "reason_plan_not_triggered": "The live goal was below the current validated workspace; RViz and reachability review are required before planning.",
+  "result_schema": "graspnet-exact-time-smoke-v1",
+  "tool_goal_pose": {
+    "frame_id": "right_base",
+    "orientation_xyzw": [
+      0.4672499244518669,
+      -0.37919074014945814,
+      0.6604900101326765,
+      0.44904881382714695
+    ],
+    "position": [
+      -0.023779275326896332,
+      -0.4041317427018451,
+      -0.11832796637274853
+    ],
+    "stamp": {
+      "nanosec": 704305908,
+      "sec": 1787223236
+    }
+  }
+}

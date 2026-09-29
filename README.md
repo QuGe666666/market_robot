@@ -11,17 +11,20 @@
 | [`robot/src/supermarket_grasp_ros2/`](robot/src/supermarket_grasp_ros2/) | RGB-D、检测结果、GraspNet/传统抓取和规划目标之间的 ROS 2 桥接 |
 | [`robot/src/supermarket_grasp_ui/`](robot/src/supermarket_grasp_ui/) | 抓取与比赛 Qt 界面 |
 | [`robot/src/`](robot/src/) | 机械臂、相机周边接口、视觉、CuRobo 桥接、夹爪、升降机及底盘等 ROS 2 包 |
+| [`robot/主程序部署说明.md`](robot/主程序部署说明.md) | 现场双臂比赛系统的部署、配置、启动与停机说明 |
+| [`robot/start_supermarket_ui_clean.sh`](robot/start_supermarket_ui_clean.sh) | 清理指定旧进程后仅启动 Qt 界面的脚本；**不启动完整比赛系统** |
+| [`robot/validation_results/`](robot/validation_results/) | 原机器保留的历史 JSON/CSV 验证记录；不是当前系统已通过真机验收的证明 |
 | [`Supermarket/`](Supermarket/) | RealSense 抓取实验脚本、手眼标定资料和操作说明 |
 | [`robot_api/`](robot_api/) | 机械臂、夹爪、相机、底盘等原生 API 封装与接口文档 |
 
-`robot_brain` 与 `supermarket_pick_sequence` 是两套分别演进的比赛总控。各自 README 都描述了启动入口；仓库没有把它们合并为一个已验证的现场启动方案。查看对应子目录的 README、接口文档和测试报告，再选定要使用的流程。
+`robot_brain` 与 `supermarket_pick_sequence` 是两套分别演进的比赛总控。2026-09-14 的[`主程序部署说明`](robot/主程序部署说明.md)将 `supermarket_pick_sequence/competition_system.launch.py` 列为当时正式主入口；`robot_brain` 是另一套独立方案。仓库没有把它们合并为一个已验证的现场启动方案。
 
 ## 环境与构建
 
 - 推荐 Ubuntu 22.04、ROS 2 Humble，并按设备情况安装 RealMan、Intel RealSense、CuRobo、GraspNet、Qwen/YOLO、Qt 等依赖。
 - 部分源码和启动配置保留了原开发机的绝对路径（例如 `/home/lh/robot`、`/home/lh/Supermarket`）。换机部署时需放到相应路径，或先调整路径、设备地址、相机序列号与标定配置。
 - RealSense ROS 源码、CuRobo/GraspNet/Ultralytics 的上游副本、模型权重以及部分设备 SDK 的编译库没有随本快照重复上传；需按项目子目录说明另行安装或提供。
-- 现有比赛配置还引用 `/home/lh/robot/src/best.pt` 和 `/home/lh/robot/models/qwen2_5_vl/Qwen2.5-VL-7B-Instruct`。这两处是运行时模型文件，**不在本仓库内**。`robot/build/` 与 `robot/install/` 由 `colcon build` 重新生成；`results/`、`runtime_logs/` 和 `validation_results/` 是运行输出。
+- 现有比赛配置还引用 `/home/lh/robot/src/best.pt` 和 `/home/lh/robot/models/qwen2_5_vl/Qwen2.5-VL-7B-Instruct`。这两处是运行时模型文件，**不在本仓库内**。原机器的 `robot/models/` 约 25 GB，应由模型发布渠道或独立文件存储提供。`robot/build/` 与 `robot/install/` 由 `colcon build` 重新生成；`results/`、`runtime_logs/` 是运行输出。`validation_results/` 仅收录选定的历史报告。
 
 在已安装依赖的环境中编译 ROS 2 工作空间：
 
@@ -43,6 +46,6 @@ PYTHONPATH="$PWD" python3 -m unittest discover -s tests -v
 
 ## 快照边界
 
-本仓库保留可阅读和维护的项目文件。没有上传 `build/`、`install/`、日志、缓存、相机采集数据、预测输出、模型权重、安装程序、重复的第三方源码副本、本机 `grasp_runtime.json`、`.env` 和 SSH 密钥。部分功能依赖这些外部文件或尚待现场填写的配置，因此**仅克隆本仓库不能直接运行完整真实比赛系统**。
+本仓库保留可阅读和维护的项目文件。没有上传 `build/`、`install/`、运行日志、缓存、相机采集数据、预测输出、模型权重、厂商安装包、重复的第三方源码副本、本机 `grasp_runtime.json`、`.env` 和 SSH 密钥。部分功能依赖这些外部文件或尚待现场填写的配置，因此**仅克隆本仓库不能直接运行完整真实比赛系统**。
 
 原目录中的历史备份仓库 `/home/lh/supermarket-grasp` 未重复放入；相关当前源码已按上表从工作目录整理。子目录 README 可能仍使用原机器路径，并可能记录当时的开发状态，应以现场设备和实际测试结果为准。

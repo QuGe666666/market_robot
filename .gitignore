@@ -31,6 +31,7 @@ Supermarket/DepthCamera_*
 Supermarket/*selected_object*
 Supermarket/*predictions_diagnostics.json
 Supermarket/SM/*predictions_diagnostics.json
+robot/validation_results/*.png
 **/*predictions*.npy
 **/*.pt
 **/*.pth

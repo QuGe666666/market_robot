@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "test_0_manual_cuboid": {
+      "failure_reasons": [],
+      "pass": true,
+      "path_delta": 1.8021032967513266
+    },
+    "test_1_no_obstacle": {
+      "failure_reasons": [],
+      "pass": true
+    }
+  },
+  "missing_tests": [
+    "test_2_avoidable_obstacle",
+    "test_3_blocked",
+    "test_4_collision_off"
+  ],
+  "overall_pass": false,
+  "verification": "NOT YET VERIFIED"
+}

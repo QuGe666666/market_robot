@@ -1,0 +1,71 @@
+{
+  "collision_enabled": true,
+  "ee_cartesian_path_length": null,
+  "enable_nvblox_collision": true,
+  "execute_trajectory": false,
+  "failure_category": "START_IN_COLLISION",
+  "failure_reason": "MotionGenStatus.INVALID_START_STATE_WORLD_COLLISION",
+  "goal_pose": {
+    "frame_id": "right_base",
+    "orientation_xyzw": [
+      0.4232294915519255,
+      0.6370157398499389,
+      -0.39314845661487374,
+      0.5104135928102586
+    ],
+    "position": [
+      -0.460138,
+      0.043625,
+      0.212095
+    ],
+    "stamp": {
+      "nanosec": 742601543,
+      "sec": 1787219817
+    }
+  },
+  "joint_space_path_length": null,
+  "minimum_obstacle_clearance_m": null,
+  "nvblox_stats": {
+    "aabb_min_m": [
+      -0.9,
+      -0.9,
+      -0.3
+    ],
+    "aabb_size_m": [
+      1.8,
+      1.8,
+      1.8
+    ],
+    "collision_margin_m": 0.03,
+    "frame": "right_base",
+    "observed_voxels": 93440,
+    "occupied_voxels": 3824,
+    "shape": [
+      121,
+      121,
+      121
+    ],
+    "status": "NVBLOX_VALID",
+    "unknown_is_collision": true,
+    "unknown_voxels": 1678121,
+    "voxel_size_m": 0.014999999664723873
+  },
+  "nvblox_world_valid": true,
+  "planner_status": "MotionGenStatus.INVALID_START_STATE_WORLD_COLLISION",
+  "planning_frame": "right_base",
+  "planning_success": false,
+  "planning_time_ms": 24.9107189993083,
+  "result_schema": "grasp-nvblox-curobo-validation-v1",
+  "start_joint_state": [
+    1.3680974670410155,
+    -1.3100586967468262,
+    1.628416554260254,
+    0.02127154968380928,
+    1.5755256351470948,
+    -1.7051617000579835
+  ],
+  "test_mode": "nvblox",
+  "test_name": "test_1_no_obstacle",
+  "trajectory_file": null,
+  "trajectory_points": 0
+}
