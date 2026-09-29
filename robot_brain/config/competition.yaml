@@ -1,0 +1,13 @@
+competition:
+  orders:
+    - ORDER_1
+    - ORDER_2
+  products_per_order:
+    low: low_product
+    medium: medium_product
+    high: high_product
+  order_timeout_sec: 900
+  competition_timeout_sec: 1800
+navigation:
+  ready: false
+  map_file: ""

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>supermarket_grasp_ros2</name>
+  <version>0.1.0</version>
+  <description>ROS2 wrapper for the RealSense GraspNet supermarket grasp pipeline.</description>
+  <maintainer email="lh@example.com">lh</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>qwen2_5_vl_ros2</exec_depend>
+  <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>rm_driver</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

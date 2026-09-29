@@ -1,0 +1,6 @@
+string map_name
+int32 floor
+---
+bool success
+string message
+bool reconnect_expected

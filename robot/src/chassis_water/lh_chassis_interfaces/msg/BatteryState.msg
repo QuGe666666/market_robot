@@ -1,0 +1,8 @@
+std_msgs/Header header
+float64 battery_capacity
+float64 battery_current
+float64 battery_voltage
+float64 charge_voltage
+bool charging
+float64 head_current
+string raw_json

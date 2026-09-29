@@ -1,0 +1,7 @@
+navigation:
+  ready: false
+  map_file: ""
+  frame_id: map
+  action_endpoint: ""
+  localization_node: ""
+  navigation_node: ""

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+container_name=validation-nvblox
+workspace=/home/lh/isaac_ros_ws
+config=/home/lh/robot/src/grasp_nvblox_curobo_test/config/nvblox.yaml
+
+cleanup() {
+  docker stop -t 1 "$container_name" >/dev/null 2>&1 || true
+  docker rm -f "$container_name" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT
+trap 'exit 0' INT TERM
+
+if docker container inspect wrist-nvblox >/dev/null 2>&1; then
+  echo "wrist-nvblox is already running; use launch_nvblox:=false to reuse it" >&2
+  exit 1
+fi
+
+docker run --rm --name "$container_name" --runtime nvidia --network host --ipc host --privileged \
+  -e FASTRTPS_DEFAULT_PROFILES_FILE=/tmp/fastdds_udp.xml \
+  -e ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-0}" \
+  -v "$workspace:/workspaces/isaac_ros-dev:ro" \
+  -v /home/lh/robot:/home/lh/robot:ro \
+  -v /home/lh/robot/src/curobo_realman_test/config/fastdds_udp.xml:/tmp/fastdds_udp.xml:ro \
+  --entrypoint /bin/bash \
+  --workdir /workspaces/isaac_ros-dev \
+  isaac_ros_dev-aarch64 \
+  -lc 'source /opt/ros/humble/setup.bash
+source /workspaces/isaac_ros-dev/install/setup.bash
+exec ros2 run nvblox_ros nvblox_node --ros-args --params-file /home/lh/robot/src/grasp_nvblox_curobo_test/config/nvblox.yaml \
+  -r camera_0/depth/image:=/right_camera/right_camera/aligned_depth_to_color/image_raw \
+  -r camera_0/depth/camera_info:=/right_camera/right_camera/aligned_depth_to_color/camera_info \
+  -r camera_0/color/image:=/right_camera/right_camera/color/image_raw \
+  -r camera_0/color/camera_info:=/right_camera/right_camera/color/camera_info' &
+container_pid=$!
+wait "$container_pid"

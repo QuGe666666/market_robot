@@ -1,0 +1,47 @@
+
+giantcrab_joint_node:
+  ros__parameters:
+    # ===== 设备与总线参数 =====
+    device_type: 41
+    device_index: 0
+    channel_index: 0
+    node_id: 1
+    arb_bitrate: 1000000
+    data_bitrate: 5000000
+    enable_brs: true
+    canfd_iso: true
+
+    # ===== so / 头文件配套方式 =====
+    # 优先读取环境变量 CONTROLCANFD_SO。
+    # 如果没有设置，则默认尝试从当前包安装目录 lib/libcontrolcanfd.so 加载。
+    sdk_so_path: ""
+
+    # ===== 关节逻辑参数 =====
+    joint_name: "pitch_joint"
+    min_angle_deg: 0.0
+    max_angle_deg: 50.0
+    speed_rpm: 0.5
+    accel_rpm_per_s: 1000.0
+    decel_rpm_per_s: 1000.0
+    counts_per_turn: 65536.0
+    auto_enable_before_move: false
+    wait_boot_ready: true
+    boot_ready_timeout_ms: 3500
+    settle_after_enable_ms: 100
+    enable_verbose_log: true
+
+    # ===== 周期发布参数 =====
+    publish_period_ms: 100
+
+    # ===== 对象字典 =====
+    od_controlword_index: 24640      # 0x6040
+    od_statusword_index: 24641       # 0x6041
+    od_fault_code_index: 24639       # 0x603F
+    od_mode_of_operation_index: 24672  # 0x6060
+    od_actual_position_index: 24676    # 0x6064
+    od_actual_velocity_index: 24684    # 0x606C
+    od_target_position_index: 24698    # 0x607A
+    od_profile_velocity_index: 24705   # 0x6081
+    od_profile_accel_index: 24707      # 0x6083
+    od_profile_decel_index: 24708      # 0x6084
+    od_set_zero_index: 9521            # 0x2531

@@ -1,0 +1,6 @@
+---
+bool success
+string message
+float64 max_speed_linear
+float64 max_speed_angular
+string results_json

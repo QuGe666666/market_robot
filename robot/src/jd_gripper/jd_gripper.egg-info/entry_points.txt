@@ -1,0 +1,3 @@
+[console_scripts]
+jd_gripper_node = jd_gripper.jd_gripper_node:main
+

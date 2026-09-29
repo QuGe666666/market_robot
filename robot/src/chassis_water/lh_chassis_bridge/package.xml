@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>lh_chassis_bridge</name>
+  <version>0.1.0</version>
+  <description>ROS 2 Humble TCP bridge for the WATER chassis.</description>
+  <maintainer email="devnull@example.com">Codex</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>ament_index_python</depend>
+  <depend>geometry_msgs</depend>
+  <depend>lh_chassis_interfaces</depend>
+  <depend>nav_msgs</depend>
+  <depend>rclpy</depend>
+  <depend>std_srvs</depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

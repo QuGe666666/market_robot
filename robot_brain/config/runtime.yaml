@@ -1,0 +1,12 @@
+runtime:
+  ros_distro: humble
+  python: "3.10 (ROS2 Humble)"
+  use_mock: true
+  use_real_robot: false
+  use_navigation: false
+  logs_dir: /home/lh/robot_brain/logs
+  external_environments:
+    ros2: /opt/ros/humble
+    curobo_source: /home/lh/robot_env/source/curobo
+    vlm_ros_package: /home/lh/robot/src/qwen2_5_vl_ros2
+    graspnet_ros_package: /home/lh/robot/src/grounded_sam2_ros2

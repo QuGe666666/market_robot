@@ -1,0 +1,197 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Robot1
+        - /Nvblox Mesh1
+        - /TF1
+    Tree Height: 700
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 36; 39; 43
+    Fixed Frame: right_base
+    Frame Rate: 30
+  Displays:
+    - Alpha: 0.45
+      Cell Size: 0.1
+      Class: rviz_default_plugins/Grid
+      Color: 110; 110; 115
+      Enabled: true
+      Name: Grid
+      Plane: XY
+      Plane Cell Count: 20
+      Reference Frame: right_base
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: true
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Name: Robot
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+    - Alpha: 0.65
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /planned/robot_description
+      Enabled: true
+      Name: Planned Robot
+      TF Prefix: planned_
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+      Marker Scale: 0.18
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree: {}
+      Update Interval: 0
+      Value: true
+    - Ceiling Height: 1.5
+      Class: nvblox_rviz_plugin/NvbloxMesh
+      Cut Ceiling: false
+      Enabled: true
+      Mesh Color: Color
+      Name: Nvblox Mesh
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /nvblox_node/mesh
+      Value: true
+    - Alpha: 0.55
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 1
+        Min Value: -1
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Name: Nvblox ESDF
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.015
+      Style: Flat Squares
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /nvblox_node/static_esdf_pointcloud
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Grasp Goal
+      Namespaces: {}
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /grasp_goal_marker
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: EE Path
+      Namespaces: {}
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /planning_debug/ee_path
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Start EE
+      Namespaces: {}
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /planning_debug/start_ee
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Manual Cuboid
+      Namespaces: {}
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /planning_debug/manual_cuboid
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Right RGB
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /right_camera/right_camera/color/image_raw
+      Value: true
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 1.45
+      Focal Point:
+        X: -0.30
+        Y: 0.0
+        Z: 0.20
+      Name: Current View
+      Pitch: 0.45
+      Target Frame: right_base
+      Value: Orbit (rviz)
+      Yaw: 2.65
+Window Geometry:
+  Height: 900
+  Width: 1450

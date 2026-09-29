@@ -1,0 +1,7 @@
+nc: 3
+names:
+- red
+- yellow
+- blue
+updated_at: '2026-04-29T15:02:43'
+source: labelme_json_to_yolo

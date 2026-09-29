@@ -1,0 +1,32 @@
+lh_chassis_bridge:
+  ros__parameters:
+    host: "192.168.31.199"
+    port: 5410
+    socket_timeout_s: 0.2
+    response_timeout_s: 5.0
+    command_terminator: "\n"
+    status_hz: 2.0
+    velocity_hz: 5.0
+    battery_hz: 1.0
+    scene_hz: 0.5
+    device_state_hz: 0.2
+    notification_poll_hz: 10.0
+    callback_poll_hz: 10.0
+    action_poll_dt_s: 0.2
+    cmd_vel_topic: "/cmd_vel"
+    odom_topic: "/chassis/odom"
+    velocity_topic: "/chassis/velocity"
+    status_topic: "/chassis/status"
+    notifications_topic: "/chassis/notifications"
+    callbacks_topic: "/chassis/callbacks"
+    pose_speed_topic: "/chassis/pose_speed"
+    battery_topic: "/chassis/battery"
+    robot_state_topic: "/chassis/robot_state"
+    scene_topic: "/chassis/scene"
+    task_proc_topic: "/chassis/task_proc"
+    device_state_topic: "/chassis/device_state"
+    operation_state_topic: "/chassis/operation_state"
+    map_frame_id: "map"
+    base_frame_id: "base_link"
+    charge_marker: ""
+    notification_history_size: 200

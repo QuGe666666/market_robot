@@ -1,0 +1,15 @@
+omnipicker_modbus_node:
+  ros__parameters:
+    left_arm_ip: "169.254.128.18"
+    right_arm_ip: "169.254.128.19"
+    arm_port: 8080
+    left_gripper_id: 2
+    right_gripper_id: 0
+    modbus_port: 1
+    baudrate: 115200
+    default_speed: 255
+    default_force: 255
+    tool_voltage: 3
+    enable_tool_power: true
+    auto_init: true
+    publish_rate: 10.0

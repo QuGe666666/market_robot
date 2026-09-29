@@ -1,0 +1,6 @@
+---
+bool success
+string message
+string ip_address
+string hw_address
+string results_json

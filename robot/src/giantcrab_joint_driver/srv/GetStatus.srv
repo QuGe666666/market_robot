@@ -1,0 +1,11 @@
+---
+bool success
+float64 angle_deg
+float64 velocity_rpm
+uint16 status_word
+uint16 fault_code
+float64 min_angle_deg
+float64 max_angle_deg
+float64 speed_rpm
+bool enabled
+string message

@@ -1,0 +1,22 @@
+schema: curobo-realman-hand-eye-v1
+# Copied from the accepted calibration result.json files.
+left:
+  camera_frame: left_camera
+  base_frame: left_base
+  source_result: /workspace/calibration/results/left_eye_in_hand-20260811-145532-20260811-145951/result.json
+  T_gripper_camera:
+    - [-0.02554522396412673, -0.9996398979648244, 0.00821680774376263, 0.08586910992241736]
+    - [0.9996725402602394, -0.02555667584872534, -0.0012917310877542862, -0.044464920376784366]
+    - [0.0015012602247793257, 0.008181119510099087, 0.9999654071523172, 0.01167547161011385]
+    - [0.0, 0.0, 0.0, 1.0]
+  quality: {samples: 20, reprojection_rms_px: 0.1215488208, translation_rms_m: 0.0023507846, rotation_rms_deg: 0.2737004283}
+right:
+  camera_frame: right_camera
+  base_frame: right_base
+  source_result: /workspace/calibration/results/right_eye_in_hand-20260811-150214-20260811-150905/result.json
+  T_gripper_camera:
+    - [0.023371282388568115, 0.9997033126848156, 0.006860740959957698, -0.08473545954929662]
+    - [-0.9997245307512411, 0.02335588196192684, 0.0023163315806366686, 0.04405154801645719]
+    - [0.0021554056984068033, -0.0069129866762761465, 0.9999737820770547, 0.011625538459209396]
+    - [0.0, 0.0, 0.0, 1.0]
+  quality: {samples: 20, reprojection_rms_px: 0.0999747667, translation_rms_m: 0.0023334676, rotation_rms_deg: 0.3383310970}

@@ -1,0 +1,7 @@
+:USERPROFILE\.ssh\id_rsa
+:USERPROFILE\.ssh\id_rsa.pub
+__pycache__/
+*.pyc
+*.so
+build/
+dist/

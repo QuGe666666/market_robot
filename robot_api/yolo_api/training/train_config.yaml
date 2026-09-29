@@ -1,0 +1,52 @@
+# YOLOv8 训练默认配置
+# 命令行参数优先级高于本文件。
+
+# 数据集配置文件。
+# 这个文件由 dataset_tools/split_yolo_dataset.py 自动生成。
+data: training/dataset.yaml
+
+# 任务类型：
+# auto    -> 从 dataset.yaml 里的 task 字段读取
+# detect  -> 普通目标检测
+# segment -> 实例分割
+# obb     -> 旋转框
+task: auto
+
+# 模型：
+# auto -> 根据 task 自动选择：
+#   detect  -> yolov8n.pt
+#   segment -> yolov8n-seg.pt
+#   obb     -> yolov8n-obb.pt
+#
+# 也可以写成本地权重路径：
+#   training/weights/yolov8n.pt
+model: auto
+
+# 基础训练参数
+epochs: 100
+imgsz: 640
+batch: 8
+device: 0
+workers: 4
+patience: 30
+
+# 输出目录
+project: training/runs
+name: auto
+exist_ok: false
+
+# 随机种子
+seed: 42
+
+# 优化器
+optimizer: auto
+
+# 训练辅助选项
+cache: false
+amp: true
+plots: true
+save: true
+save_period: -1
+
+# 是否恢复训练
+resume: false

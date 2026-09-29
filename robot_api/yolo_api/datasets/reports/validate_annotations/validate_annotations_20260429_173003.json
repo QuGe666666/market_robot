@@ -1,0 +1,2636 @@
+{
+  "task": "detect",
+  "image_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images",
+  "json_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json",
+  "class_names": [
+    "red",
+    "yellow",
+    "blue"
+  ],
+  "class_names_source": "cli",
+  "inferred_class_counts": {},
+  "required_labels": [
+    "red",
+    "yellow",
+    "blue"
+  ],
+  "config": {
+    "task": "detect",
+    "image_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images",
+    "json_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json",
+    "report_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/validate_annotations",
+    "class_names": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "classes_yaml_path": null,
+    "required_labels": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "min_objects": 1,
+    "max_objects": 50,
+    "min_area_ratio": 0.0005,
+    "max_area_ratio": 0.95,
+    "duplicate_iou": 0.9,
+    "save_review_images": true,
+    "max_review_images": 100
+  },
+  "summary": {
+    "total_images": 65,
+    "total_json": 34,
+    "paired_by_stem": 34,
+    "missing_json_images": 31,
+    "orphan_json_files": 0,
+    "checked_json": 34,
+    "total_objects": 99,
+    "min_objects_per_image": 2,
+    "max_objects_per_image": 3,
+    "avg_objects_per_image": 2.911764705882353,
+    "total_errors": 0,
+    "total_warnings": 3,
+    "class_counts": {
+      "red": 31,
+      "yellow": 34,
+      "blue": 34
+    }
+  },
+  "global_errors": [],
+  "global_warnings": [
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114029_605_frame0035.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114029_859_frame0036.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114031_796_frame0037.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_001_frame0038.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_194_frame0039.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_328_frame0040.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_535_frame0041.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_395_frame0042.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_536_frame0043.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_729_frame0044.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_863_frame0045.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114034_072_frame0046.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_071_frame0047.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_265_frame0048.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_449_frame0049.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_631_frame0050.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_767_frame0051.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114036_771_frame0052.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114036_904_frame0053.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114037_036_frame0054.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114038_133_frame0055.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114039_771_frame0056.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114039_900_frame0057.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114040_035_frame0058.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114041_572_frame0059.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114041_703_frame0060.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114042_836_frame0061.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114042_962_frame0062.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114043_134_frame0063.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114044_276_frame0064.jpg",
+    "图片缺少对应 JSON: /home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114044_398_frame0065.jpg"
+  ],
+  "missing_json_images": [
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114029_605_frame0035.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114029_859_frame0036.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114031_796_frame0037.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_001_frame0038.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_194_frame0039.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_328_frame0040.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114032_535_frame0041.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_395_frame0042.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_536_frame0043.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_729_frame0044.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114033_863_frame0045.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114034_072_frame0046.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_071_frame0047.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_265_frame0048.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_449_frame0049.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_631_frame0050.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114035_767_frame0051.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114036_771_frame0052.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114036_904_frame0053.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114037_036_frame0054.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114038_133_frame0055.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114039_771_frame0056.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114039_900_frame0057.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114040_035_frame0058.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114041_572_frame0059.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114041_703_frame0060.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114042_836_frame0061.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114042_962_frame0062.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114043_134_frame0063.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114044_276_frame0064.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114044_398_frame0065.jpg"
+  ],
+  "orphan_json_files": [],
+  "items": [
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114021_922_frame0001.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114021_922_frame0001.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 67,
+          "bbox": [
+            78.5,
+            43.5,
+            236.0,
+            252.0
+          ],
+          "bbox_area_ratio": 0.10689697265625,
+          "polygon_area_ratio": 0.10184814453125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 49,
+          "bbox": [
+            231.5,
+            76.5,
+            412.0,
+            298.0
+          ],
+          "bbox_area_ratio": 0.13014567057291668,
+          "polygon_area_ratio": 0.11337443033854167,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 39,
+          "bbox": [
+            418.5,
+            44.5,
+            633.0,
+            280.0
+          ],
+          "bbox_area_ratio": 0.16443603515625,
+          "polygon_area_ratio": 0.12326904296875,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114022_259_frame0002.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114022_259_frame0002.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "blue",
+        "yellow"
+      ],
+      "label_counts": {
+        "red": 1,
+        "blue": 1,
+        "yellow": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 63,
+          "bbox": [
+            108.5,
+            56.5,
+            271.0,
+            250.0
+          ],
+          "bbox_area_ratio": 0.10235595703125,
+          "polygon_area_ratio": 0.09190185546875,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 43,
+          "bbox": [
+            449.5,
+            85.5,
+            639.0,
+            307.0
+          ],
+          "bbox_area_ratio": 0.13663492838541666,
+          "polygon_area_ratio": 0.11714640299479166,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 49,
+          "bbox": [
+            251.5,
+            95.5,
+            441.0,
+            315.0
+          ],
+          "bbox_area_ratio": 0.13540120442708334,
+          "polygon_area_ratio": 0.10694254557291667,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114022_457_frame0003.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114022_457_frame0003.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 59,
+          "bbox": [
+            122.5,
+            48.5,
+            301.0,
+            248.0
+          ],
+          "bbox_area_ratio": 0.11592041015625,
+          "polygon_area_ratio": 0.09154459635416666,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 54,
+          "bbox": [
+            259.5,
+            99.5,
+            464.0,
+            327.0
+          ],
+          "bbox_area_ratio": 0.15144449869791668,
+          "polygon_area_ratio": 0.10650349934895834,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 37,
+          "bbox": [
+            471.5,
+            114.5,
+            639.0,
+            333.0
+          ],
+          "bbox_area_ratio": 0.11913655598958334,
+          "polygon_area_ratio": 0.11402547200520834,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114022_658_frame0004.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114022_658_frame0004.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 67,
+          "bbox": [
+            111.5,
+            51.5,
+            300.0,
+            254.0
+          ],
+          "bbox_area_ratio": 0.12425537109375,
+          "polygon_area_ratio": 0.09106160481770834,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 49,
+          "bbox": [
+            244.5,
+            112.5,
+            456.0,
+            340.0
+          ],
+          "bbox_area_ratio": 0.15662841796875,
+          "polygon_area_ratio": 0.10548583984375,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 37,
+          "bbox": [
+            461.5,
+            137.5,
+            639.0,
+            358.0
+          ],
+          "bbox_area_ratio": 0.12740478515625,
+          "polygon_area_ratio": 0.11756917317708333,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114022_853_frame0005.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114022_853_frame0005.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 73,
+          "bbox": [
+            70.5,
+            54.5,
+            262.0,
+            257.0
+          ],
+          "bbox_area_ratio": 0.12623291015625,
+          "polygon_area_ratio": 0.087777099609375,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 53,
+          "bbox": [
+            203.5,
+            117.5,
+            416.0,
+            344.0
+          ],
+          "bbox_area_ratio": 0.15667724609375,
+          "polygon_area_ratio": 0.10338297526041666,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 53,
+          "bbox": [
+            418.5,
+            146.5,
+            591.0,
+            364.0
+          ],
+          "bbox_area_ratio": 0.12213134765625,
+          "polygon_area_ratio": 0.1115673828125,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114023_057_frame0006.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114023_057_frame0006.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 90,
+          "bbox": [
+            46.5,
+            19.5,
+            246.0,
+            222.0
+          ],
+          "bbox_area_ratio": 0.13150634765625,
+          "polygon_area_ratio": 0.088160400390625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 29,
+          "bbox": [
+            177.5,
+            92.5,
+            399.0,
+            322.0
+          ],
+          "bbox_area_ratio": 0.16547607421875,
+          "polygon_area_ratio": 0.10392252604166667,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 41,
+          "bbox": [
+            390.5,
+            135.5,
+            560.0,
+            358.0
+          ],
+          "bbox_area_ratio": 0.12276611328125,
+          "polygon_area_ratio": 0.10726318359375,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114023_190_frame0007.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114023_190_frame0007.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 64,
+          "bbox": [
+            44.5,
+            11.5,
+            257.0,
+            224.0
+          ],
+          "bbox_area_ratio": 0.14699300130208334,
+          "polygon_area_ratio": 0.09660237630208333,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 43,
+          "bbox": [
+            176.5,
+            91.5,
+            403.0,
+            325.0
+          ],
+          "bbox_area_ratio": 0.17216064453125,
+          "polygon_area_ratio": 0.10620564778645833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 46,
+          "bbox": [
+            389.5,
+            137.5,
+            562.0,
+            365.0
+          ],
+          "bbox_area_ratio": 0.12774658203125,
+          "polygon_area_ratio": 0.10924845377604167,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114023_386_frame0008.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114023_386_frame0008.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 66,
+          "bbox": [
+            57.5,
+            39.5,
+            264.0,
+            249.0
+          ],
+          "bbox_area_ratio": 0.14082600911458334,
+          "polygon_area_ratio": 0.091993408203125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            187.5,
+            117.5,
+            408.0,
+            349.0
+          ],
+          "bbox_area_ratio": 0.16616455078125,
+          "polygon_area_ratio": 0.10260701497395833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 53,
+          "bbox": [
+            396.5,
+            162.5,
+            568.0,
+            388.0
+          ],
+          "bbox_area_ratio": 0.12588948567708333,
+          "polygon_area_ratio": 0.10889607747395834,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114023_521_frame0009.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114023_521_frame0009.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 89,
+          "bbox": [
+            51.5,
+            73.5,
+            246.0,
+            286.0
+          ],
+          "bbox_area_ratio": 0.13454182942708334,
+          "polygon_area_ratio": 0.09324055989583334,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 51,
+          "bbox": [
+            183.5,
+            139.5,
+            393.0,
+            367.0
+          ],
+          "bbox_area_ratio": 0.15514729817708334,
+          "polygon_area_ratio": 0.102955322265625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 55,
+          "bbox": [
+            397.5,
+            167.5,
+            567.0,
+            381.0
+          ],
+          "bbox_area_ratio": 0.11780029296875,
+          "polygon_area_ratio": 0.10729248046875,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114023_729_frame0010.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114023_729_frame0010.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 2,
+      "labels": [
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [
+        "缺少 required_labels: ['red']"
+      ],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 51,
+          "bbox": [
+            134.5,
+            174.5,
+            321.0,
+            392.0
+          ],
+          "bbox_area_ratio": 0.13204345703125,
+          "polygon_area_ratio": 0.10897908528645833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 36,
+          "bbox": [
+            330.5,
+            157.5,
+            524.0,
+            371.0
+          ],
+          "bbox_area_ratio": 0.13447998046875,
+          "polygon_area_ratio": 0.10262980143229167,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114023_921_frame0011.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114023_921_frame0011.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 2,
+      "labels": [
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [
+        "缺少 required_labels: ['red']"
+      ],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 54,
+          "bbox": [
+            131.5,
+            171.5,
+            305.0,
+            382.0
+          ],
+          "bbox_area_ratio": 0.11888590494791666,
+          "polygon_area_ratio": 0.11122639973958333,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 48,
+          "bbox": [
+            304.5,
+            126.5,
+            514.0,
+            346.0
+          ],
+          "bbox_area_ratio": 0.14969156901041666,
+          "polygon_area_ratio": 0.10167439778645833,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114024_130_frame0012.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114024_130_frame0012.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 2,
+      "labels": [
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [
+        "缺少 required_labels: ['red']"
+      ],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 56,
+          "bbox": [
+            175.5,
+            95.5,
+            342.0,
+            304.0
+          ],
+          "bbox_area_ratio": 0.11300537109375,
+          "polygon_area_ratio": 0.105523681640625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 39,
+          "bbox": [
+            330.5,
+            38.5,
+            551.0,
+            262.0
+          ],
+          "bbox_area_ratio": 0.16042236328125,
+          "polygon_area_ratio": 0.105078125,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114024_323_frame0013.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114024_323_frame0013.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 71,
+          "bbox": [
+            23.5,
+            6.5,
+            202.0,
+            230.0
+          ],
+          "bbox_area_ratio": 0.12986572265625,
+          "polygon_area_ratio": 0.10230021158854166,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 52,
+          "bbox": [
+            202.5,
+            20.5,
+            373.0,
+            237.0
+          ],
+          "bbox_area_ratio": 0.12016031901041667,
+          "polygon_area_ratio": 0.11047526041666667,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 38,
+          "bbox": [
+            360.5,
+            0.5,
+            588.0,
+            196.0
+          ],
+          "bbox_area_ratio": 0.14477945963541666,
+          "polygon_area_ratio": 0.10257161458333333,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114024_464_frame0014.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114024_464_frame0014.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 50,
+          "bbox": [
+            41.5,
+            0.5,
+            222.0,
+            207.0
+          ],
+          "bbox_area_ratio": 0.12133219401041667,
+          "polygon_area_ratio": 0.09795694986979167,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            218.5,
+            0.5,
+            389.0,
+            210.0
+          ],
+          "bbox_area_ratio": 0.11627522786458333,
+          "polygon_area_ratio": 0.10867146809895833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            386.5,
+            0.5,
+            607.0,
+            164.0
+          ],
+          "bbox_area_ratio": 0.11735595703125,
+          "polygon_area_ratio": 0.08419352213541667,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114024_656_frame0015.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114024_656_frame0015.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            58.5,
+            0.5,
+            235.0,
+            207.0
+          ],
+          "bbox_area_ratio": 0.11864339192708333,
+          "polygon_area_ratio": 0.09486368815104167,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 45,
+          "bbox": [
+            231.5,
+            0.5,
+            398.0,
+            209.0
+          ],
+          "bbox_area_ratio": 0.11300537109375,
+          "polygon_area_ratio": 0.10564249674479166,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 33,
+          "bbox": [
+            393.5,
+            0.5,
+            610.0,
+            164.0
+          ],
+          "bbox_area_ratio": 0.11522705078125,
+          "polygon_area_ratio": 0.08298055013020833,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114024_853_frame0016.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114024_853_frame0016.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 83,
+          "bbox": [
+            78.5,
+            12.5,
+            246.0,
+            227.0
+          ],
+          "bbox_area_ratio": 0.11695556640625,
+          "polygon_area_ratio": 0.09164998372395833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 55,
+          "bbox": [
+            244.5,
+            22.5,
+            403.0,
+            234.0
+          ],
+          "bbox_area_ratio": 0.10912353515625,
+          "polygon_area_ratio": 0.100997314453125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 40,
+          "bbox": [
+            393.5,
+            0.5,
+            609.0,
+            193.0
+          ],
+          "bbox_area_ratio": 0.13503824869791667,
+          "polygon_area_ratio": 0.09644287109375,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114025_061_frame0017.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114025_061_frame0017.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 61,
+          "bbox": [
+            94.5,
+            77.5,
+            245.0,
+            274.0
+          ],
+          "bbox_area_ratio": 0.09626708984375,
+          "polygon_area_ratio": 0.081593017578125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 88,
+          "bbox": [
+            247.5,
+            93.5,
+            395.0,
+            286.0
+          ],
+          "bbox_area_ratio": 0.09242757161458333,
+          "polygon_area_ratio": 0.08729736328125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            391.5,
+            39.5,
+            590.0,
+            254.0
+          ],
+          "bbox_area_ratio": 0.13860107421875,
+          "polygon_area_ratio": 0.09293741861979167,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114025_194_frame0018.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114025_194_frame0018.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 63,
+          "bbox": [
+            100.5,
+            94.5,
+            249.0,
+            287.0
+          ],
+          "bbox_area_ratio": 0.09305419921875,
+          "polygon_area_ratio": 0.07731648763020833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 68,
+          "bbox": [
+            251.5,
+            111.5,
+            397.0,
+            297.0
+          ],
+          "bbox_area_ratio": 0.08785888671875,
+          "polygon_area_ratio": 0.08362345377604166,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 50,
+          "bbox": [
+            391.5,
+            59.5,
+            589.0,
+            265.0
+          ],
+          "bbox_area_ratio": 0.13211669921875,
+          "polygon_area_ratio": 0.087635498046875,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114025_389_frame0019.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114025_389_frame0019.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 69,
+          "bbox": [
+            120.5,
+            116.5,
+            263.0,
+            302.0
+          ],
+          "bbox_area_ratio": 0.08604736328125,
+          "polygon_area_ratio": 0.07333821614583333,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 59,
+          "bbox": [
+            265.5,
+            133.5,
+            409.0,
+            314.0
+          ],
+          "bbox_area_ratio": 0.08431559244791667,
+          "polygon_area_ratio": 0.07998494466145833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            403.5,
+            85.5,
+            598.0,
+            285.0
+          ],
+          "bbox_area_ratio": 0.12631103515625,
+          "polygon_area_ratio": 0.083721923828125,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114025_541_frame0020.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114025_541_frame0020.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 80,
+          "bbox": [
+            137.5,
+            99.5,
+            278.0,
+            284.0
+          ],
+          "bbox_area_ratio": 0.08438232421875,
+          "polygon_area_ratio": 0.06998982747395834,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 74,
+          "bbox": [
+            283.5,
+            115.5,
+            431.0,
+            298.0
+          ],
+          "bbox_area_ratio": 0.08762613932291667,
+          "polygon_area_ratio": 0.08342366536458333,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 59,
+          "bbox": [
+            425.5,
+            65.5,
+            630.0,
+            270.0
+          ],
+          "bbox_area_ratio": 0.13613362630208334,
+          "polygon_area_ratio": 0.09075927734375,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114025_797_frame0021.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114025_797_frame0021.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 68,
+          "bbox": [
+            149.5,
+            109.5,
+            296.0,
+            306.0
+          ],
+          "bbox_area_ratio": 0.09370849609375,
+          "polygon_area_ratio": 0.08407470703125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 59,
+          "bbox": [
+            296.5,
+            128.5,
+            458.0,
+            330.0
+          ],
+          "bbox_area_ratio": 0.10593180338541666,
+          "polygon_area_ratio": 0.0993603515625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 37,
+          "bbox": [
+            456.5,
+            79.5,
+            639.0,
+            303.0
+          ],
+          "bbox_area_ratio": 0.13277587890625,
+          "polygon_area_ratio": 0.100196533203125,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114026_198_frame0022.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114026_198_frame0022.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 106,
+          "bbox": [
+            0.5,
+            0.5,
+            201.0,
+            264.0
+          ],
+          "bbox_area_ratio": 0.17197835286458332,
+          "polygon_area_ratio": 0.15233072916666668,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 40,
+          "bbox": [
+            205.5,
+            18.5,
+            423.0,
+            295.0
+          ],
+          "bbox_area_ratio": 0.19576416015625,
+          "polygon_area_ratio": 0.18478759765625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 23,
+          "bbox": [
+            418.5,
+            0.5,
+            639.0,
+            253.0
+          ],
+          "bbox_area_ratio": 0.18123779296875,
+          "polygon_area_ratio": 0.14659138997395835,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114026_391_frame0023.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114026_391_frame0023.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "yellow",
+        "blue",
+        "red"
+      ],
+      "label_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 43,
+          "bbox": [
+            196.5,
+            92.5,
+            420.0,
+            377.0
+          ],
+          "bbox_area_ratio": 0.20698486328125,
+          "polygon_area_ratio": 0.19123209635416666,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 30,
+          "bbox": [
+            418.5,
+            37.5,
+            639.0,
+            338.0
+          ],
+          "bbox_area_ratio": 0.21569091796875,
+          "polygon_area_ratio": 0.16818155924479167,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 76,
+          "bbox": [
+            0.5,
+            66.5,
+            195.0,
+            330.0
+          ],
+          "bbox_area_ratio": 0.16683186848958334,
+          "polygon_area_ratio": 0.15197062174479167,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114026_601_frame0024.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114026_601_frame0024.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 36,
+          "bbox": [
+            0.5,
+            128.5,
+            179.0,
+            378.0
+          ],
+          "bbox_area_ratio": 0.14497314453125,
+          "polygon_area_ratio": 0.13744425455729167,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 31,
+          "bbox": [
+            171.5,
+            160.5,
+            391.0,
+            425.0
+          ],
+          "bbox_area_ratio": 0.18899007161458334,
+          "polygon_area_ratio": 0.17077229817708334,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 41,
+          "bbox": [
+            391.5,
+            121.5,
+            639.0,
+            393.0
+          ],
+          "bbox_area_ratio": 0.21873779296875,
+          "polygon_area_ratio": 0.15719685872395833,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114026_795_frame0025.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114026_795_frame0025.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            0.5,
+            158.5,
+            186.0,
+            392.0
+          ],
+          "bbox_area_ratio": 0.14099690755208333,
+          "polygon_area_ratio": 0.13460652669270834,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 42,
+          "bbox": [
+            164.5,
+            197.5,
+            386.0,
+            458.0
+          ],
+          "bbox_area_ratio": 0.18782796223958334,
+          "polygon_area_ratio": 0.15984700520833334,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 47,
+          "bbox": [
+            391.5,
+            183.5,
+            639.0,
+            437.0
+          ],
+          "bbox_area_ratio": 0.20423583984375,
+          "polygon_area_ratio": 0.14759724934895832,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114026_989_frame0026.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114026_989_frame0026.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 54,
+          "bbox": [
+            0.5,
+            186.5,
+            201.0,
+            418.0
+          ],
+          "bbox_area_ratio": 0.15109293619791667,
+          "polygon_area_ratio": 0.13225830078125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 115,
+          "bbox": [
+            171.5,
+            237.5,
+            389.0,
+            479.0
+          ],
+          "bbox_area_ratio": 0.17098388671875,
+          "polygon_area_ratio": 0.13869384765625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 48,
+          "bbox": [
+            396.5,
+            246.5,
+            636.0,
+            479.0
+          ],
+          "bbox_area_ratio": 0.18126220703125,
+          "polygon_area_ratio": 0.14026041666666667,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114027_395_frame0027.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114027_395_frame0027.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 87,
+          "bbox": [
+            17.5,
+            206.5,
+            223.0,
+            410.0
+          ],
+          "bbox_area_ratio": 0.13613037109375,
+          "polygon_area_ratio": 0.10930216471354166,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 58,
+          "bbox": [
+            189.5,
+            248.5,
+            393.0,
+            472.0
+          ],
+          "bbox_area_ratio": 0.14805419921875,
+          "polygon_area_ratio": 0.11825358072916667,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 46,
+          "bbox": [
+            398.5,
+            259.5,
+            620.0,
+            473.0
+          ],
+          "bbox_area_ratio": 0.15393961588541666,
+          "polygon_area_ratio": 0.11344807942708333,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114027_796_frame0028.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114027_796_frame0028.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 71,
+          "bbox": [
+            80.5,
+            218.5,
+            259.0,
+            391.0
+          ],
+          "bbox_area_ratio": 0.10023193359375,
+          "polygon_area_ratio": 0.08188313802083333,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 78,
+          "bbox": [
+            233.5,
+            251.5,
+            415.0,
+            451.0
+          ],
+          "bbox_area_ratio": 0.11786865234375,
+          "polygon_area_ratio": 0.09459269205729166,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 49,
+          "bbox": [
+            420.5,
+            262.5,
+            625.0,
+            451.0
+          ],
+          "bbox_area_ratio": 0.12548258463541667,
+          "polygon_area_ratio": 0.093760986328125,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114028_392_frame0029.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114028_392_frame0029.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 82,
+          "bbox": [
+            104.5,
+            141.5,
+            273.0,
+            320.0
+          ],
+          "bbox_area_ratio": 0.09790771484375,
+          "polygon_area_ratio": 0.07793782552083334,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 64,
+          "bbox": [
+            250.5,
+            175.5,
+            425.0,
+            360.0
+          ],
+          "bbox_area_ratio": 0.10480224609375,
+          "polygon_area_ratio": 0.083641357421875,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 66,
+          "bbox": [
+            430.5,
+            184.5,
+            626.0,
+            367.0
+          ],
+          "bbox_area_ratio": 0.11614176432291666,
+          "polygon_area_ratio": 0.08862752278645833,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114028_798_frame0030.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114028_798_frame0030.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 81,
+          "bbox": [
+            122.5,
+            122.5,
+            285.0,
+            287.0
+          ],
+          "bbox_area_ratio": 0.08701578776041667,
+          "polygon_area_ratio": 0.074234619140625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 81,
+          "bbox": [
+            265.5,
+            155.5,
+            439.0,
+            340.0
+          ],
+          "bbox_area_ratio": 0.10420166015625,
+          "polygon_area_ratio": 0.08385091145833333,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 69,
+          "bbox": [
+            444.5,
+            158.5,
+            639.0,
+            345.0
+          ],
+          "bbox_area_ratio": 0.11808024088541667,
+          "polygon_area_ratio": 0.09004109700520833,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114028_990_frame0031.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114028_990_frame0031.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 88,
+          "bbox": [
+            122.5,
+            121.5,
+            284.0,
+            275.0
+          ],
+          "bbox_area_ratio": 0.08069742838541667,
+          "polygon_area_ratio": 0.06982666015625,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 66,
+          "bbox": [
+            264.5,
+            153.5,
+            438.0,
+            349.0
+          ],
+          "bbox_area_ratio": 0.11041422526041667,
+          "polygon_area_ratio": 0.08838541666666666,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 53,
+          "bbox": [
+            442.5,
+            158.5,
+            638.0,
+            343.0
+          ],
+          "bbox_area_ratio": 0.11741455078125,
+          "polygon_area_ratio": 0.089053955078125,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114029_124_frame0032.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114029_124_frame0032.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 90,
+          "bbox": [
+            125.5,
+            118.5,
+            287.0,
+            289.0
+          ],
+          "bbox_area_ratio": 0.08963460286458333,
+          "polygon_area_ratio": 0.076220703125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 56,
+          "bbox": [
+            267.5,
+            150.5,
+            440.0,
+            345.0
+          ],
+          "bbox_area_ratio": 0.10921630859375,
+          "polygon_area_ratio": 0.088028564453125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 64,
+          "bbox": [
+            445.5,
+            155.5,
+            639.0,
+            339.0
+          ],
+          "bbox_area_ratio": 0.11558349609375,
+          "polygon_area_ratio": 0.08905517578125,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114029_276_frame0033.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114029_276_frame0033.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 93,
+          "bbox": [
+            134.5,
+            114.5,
+            295.0,
+            275.0
+          ],
+          "bbox_area_ratio": 0.08385498046875,
+          "polygon_area_ratio": 0.07168009440104167,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 72,
+          "bbox": [
+            275.5,
+            148.5,
+            448.0,
+            342.0
+          ],
+          "bbox_area_ratio": 0.10865478515625,
+          "polygon_area_ratio": 0.087279052734375,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 68,
+          "bbox": [
+            452.5,
+            152.5,
+            639.0,
+            338.0
+          ],
+          "bbox_area_ratio": 0.11261637369791666,
+          "polygon_area_ratio": 0.08959147135416666,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "json_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/json/d435_254522075719_box_20260429T114029_468_frame0034.json",
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/labelme/images/d435_254522075719_box_20260429T114029_468_frame0034.jpg",
+      "image_width": 640,
+      "image_height": 480,
+      "json_image_width": 640,
+      "json_image_height": 480,
+      "object_count": 3,
+      "labels": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "label_counts": {
+        "red": 1,
+        "yellow": 1,
+        "blue": 1
+      },
+      "errors": [],
+      "warnings": [],
+      "infos": [],
+      "shapes": [
+        {
+          "index": 0,
+          "label": "red",
+          "raw_label": "red",
+          "shape_type": "polygon",
+          "point_count": 103,
+          "bbox": [
+            135.5,
+            121.5,
+            296.0,
+            281.5
+          ],
+          "bbox_area_ratio": 0.08359375,
+          "polygon_area_ratio": 0.07091064453125,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 1,
+          "label": "yellow",
+          "raw_label": "yellow",
+          "shape_type": "polygon",
+          "point_count": 56,
+          "bbox": [
+            275.5,
+            154.5,
+            448.0,
+            350.0
+          ],
+          "bbox_area_ratio": 0.10977783203125,
+          "polygon_area_ratio": 0.08739217122395833,
+          "errors": [],
+          "warnings": []
+        },
+        {
+          "index": 2,
+          "label": "blue",
+          "raw_label": "blue",
+          "shape_type": "polygon",
+          "point_count": 65,
+          "bbox": [
+            453.5,
+            159.5,
+            639.0,
+            344.0
+          ],
+          "bbox_area_ratio": 0.11140869140625,
+          "polygon_area_ratio": 0.08855997721354167,
+          "errors": [],
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "review_images": [
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/validate_annotations/review/20260429_173003/review_0001_d435_254522075719_box_20260429T114023_729_frame0010.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/validate_annotations/review/20260429_173003/review_0002_d435_254522075719_box_20260429T114023_921_frame0011.jpg",
+    "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/validate_annotations/review/20260429_173003/review_0003_d435_254522075719_box_20260429T114024_130_frame0012.jpg"
+  ],
+  "created_at": "2026-04-29T17:30:03",
+  "report_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/validate_annotations/validate_annotations_20260429_173003.json"
+}

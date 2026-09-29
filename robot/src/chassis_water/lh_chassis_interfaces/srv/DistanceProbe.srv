@@ -1,0 +1,8 @@
+float64 x
+float64 y
+---
+bool success
+string message
+float64 obstacle_distance
+float64 static_distance
+string results_json

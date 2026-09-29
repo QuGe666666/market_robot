@@ -1,0 +1,9 @@
+recovery:
+  max_retries: 3
+  levels:
+    level_1: retry_execution
+    level_2: next_grasp_candidate
+    level_3: replan_with_frozen_esdf
+    level_4: relocal_perception
+    level_5: reposition_and_relocalize
+  allow_autonomous_regrasp: false

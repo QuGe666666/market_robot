@@ -1,0 +1,35 @@
+/**:
+  ros__parameters:
+    base_frame: right_base
+    joint_states_topic: /right/joint_states
+    grasp_pose_topic: /grasp_pose_base
+    planned_trajectory_topic: /planned_trajectory
+    planned_joint_states_topic: /planning_debug/joint_states
+    run_service: /planning_test/run
+    execute_trajectory: false
+    test_name: test_1_no_obstacle
+    test_mode: none
+    enable_nvblox_collision: true
+    min_clearance_threshold_m: 0.03
+    interpolation_dt: 0.02
+    time_dilation_factor: 0.25
+    max_attempts: 6
+    joint_state_max_age_s: 1.0
+    publish_debug_markers: true
+    publish_trajectory: true
+    save_results: true
+    results_directory: /home/lh/robot/validation_results
+    manual_cuboid_pose: [-0.460138, 0.043625, 0.112095, 1.0, 0.0, 0.0, 0.0]
+    manual_cuboid_dims: [0.18, 0.18, 0.04]
+    nvblox_service: /nvblox_node/get_esdf_and_gradient
+    nvblox_mesh_topic: /nvblox_node/mesh
+    nvblox_global_frame: right_base
+    nvblox_aabb_min_m: [-0.9, -0.9, -0.3]
+    nvblox_aabb_size_m: [1.8, 1.8, 1.8]
+    nvblox_voxel_size_m: 0.015
+    nvblox_service_timeout_s: 5.0
+    nvblox_frame_timeout_s: 3.0
+    nvblox_min_observed_voxels: 100
+    nvblox_unknown_value: 10.0
+    nvblox_unknown_is_collision: true
+    nvblox_collision_margin_m: 0.03

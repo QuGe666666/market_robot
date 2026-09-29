@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+set -u
+export PYTHONPATH="/home/lh/robot/build/grasp_nvblox_curobo_test:${PYTHONPATH:-}"
+
+exec /home/lh/miniconda3/envs/grasp/bin/python \
+  -m grasp_nvblox_curobo_test.timestamped_graspnet_node "$@"

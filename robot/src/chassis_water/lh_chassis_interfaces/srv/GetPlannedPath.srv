@@ -1,0 +1,5 @@
+---
+bool success
+string message
+int32 point_count
+string path_json

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>yolov8_ros2</name>
+  <version>0.0.1</version>
+  <description>YOLOv8 ROS2 integration with separate stream and detect control topics</description>
+  <maintainer email="lh@example.com">lh</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>rosidl_default_generators</build_depend>
+
+  <depend>ament_index_python</depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>rosidl_default_runtime</depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

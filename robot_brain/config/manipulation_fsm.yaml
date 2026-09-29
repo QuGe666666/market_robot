@@ -1,0 +1,8 @@
+manipulation_fsm:
+  camera_ready_timeout_sec: 10
+  perception_timeout_sec: 30
+  planning_timeout_sec: 30
+  execution_timeout_sec: 60
+  max_grasp_candidates: 5
+  planning_segments: [current, pregrasp, approach, grasp, lift]
+  recovery_levels: [retry_execution, next_grasp, replan, relocal_perception, reposition]

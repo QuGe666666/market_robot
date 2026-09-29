@@ -1,0 +1,21 @@
+string[] markers
+int32 count
+float64 distance_tolerance
+int32 max_continuous_retries
+float64 timeout_s
+---
+bool success
+string message
+string task_id
+string move_status
+string running_status
+bool estop_state
+---
+string move_target
+string move_status
+string running_status
+int32 move_retry_times
+bool estop_state
+float64 x
+float64 y
+float64 theta

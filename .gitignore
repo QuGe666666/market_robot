@@ -1,0 +1,41 @@
+# Local build and runtime outputs
+**/build/
+**/install/
+**/log/
+**/logs/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/*.pyc
+**/*.pyo
+**/*.log
+
+# Local credentials and device-specific runtime configuration
+**/.env
+**/.env.*
+!**/.env.example
+**/grasp_runtime.json
+**/id_rsa
+**/id_rsa.pub
+**/id_ed25519
+**/id_ed25519.pub
+**/*.pem
+**/*.key
+
+# Generated sensor data and model artifacts
+**/realsense_captures/
+Supermarket/hand_eye_calibration/eye_hand_data/
+Supermarket/DepthCapture_*
+Supermarket/DepthCamera_*
+Supermarket/*selected_object*
+Supermarket/*predictions_diagnostics.json
+Supermarket/SM/*predictions_diagnostics.json
+**/*predictions*.npy
+**/*.pt
+**/*.pth
+**/*.onnx
+**/*.engine
+**/*.db3
+**/*.mcap
+**/*.bag

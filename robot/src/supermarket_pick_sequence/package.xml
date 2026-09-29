@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>supermarket_pick_sequence</name>
+  <version>0.1.0</version>
+  <description>Event-driven dual-arm competition FSM and ROS 2 hardware coordinator.</description>
+  <maintainer email="lh@example.com">lh</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>curobo_realman_test</exec_depend>
+  <exec_depend>lh_chassis_bridge</exec_depend>
+  <exec_depend>chassis_ros</exec_depend>
+  <exec_depend>lh_chassis_interfaces</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>omnipicker_gripper</exec_depend>
+  <exec_depend>qwen2_5_vl_ros2</exec_depend>
+  <exec_depend>rcl_interfaces</exec_depend>
+  <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>rm_ros_interfaces</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>supermarket_grasp_ros2</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>yolov8_ros2</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>woosh_ros_msgs</exec_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

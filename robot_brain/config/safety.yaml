@@ -1,0 +1,8 @@
+safety:
+  joint_state_timeout_sec: 1.0
+  tf_timeout_sec: 1.0
+  camera_timeout_sec: 2.0
+  driver_timeout_sec: 1.0
+  stop_on_unexpected_motion: true
+  stop_on_invalid_esdf_snapshot: true
+  manual_stop_topic: ""

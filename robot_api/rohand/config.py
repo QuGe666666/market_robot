@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+灵巧手配置文件
+"""
+
+# 灵巧手SDK路径
+OHAND_SDK_PATH = "/home/lh/material/ohand/roh_with_rm65-main/RM-API2"
+
+# 默认机械臂IP地址
+LEFT_ARM_IP = "169.254.128.18"
+RIGHT_ARM_IP = "169.254.128.19"
+
+# Modbus通信配置
+DEFAULT_COM_PORT = 1
+DEFAULT_ROH_ADDR = 2
+DEFAULT_BAUDRATE = 115200
+
+# 机械臂API端口
+ARM_API_PORT = 8080
+
+# 寄存器地址
+ROH_FINGER_POS_TARGET0 = 0x0000
+ROH_FINGER_POS_TARGET1 = 0x0006
+ROH_FINGER_POS_CURRENT0 = 0x0012
+ROH_FINGER_POS_CURRENT1 = 0x0018
+
+# 位置值范围
+POS_MIN = 0
+POS_MAX = 65535
+POS_MID = 32768
+
+# 默认动作延迟（秒）
+DEFAULT_ACTION_DELAY = 0.5
+DEFAULT_SINGLE_FINGER_DELAY = 0.2

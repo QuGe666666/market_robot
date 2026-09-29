@@ -1,0 +1,7 @@
+float64 max_speed_linear
+float64 max_speed_angular
+---
+bool success
+string message
+float64 current_max_speed_linear
+float64 current_max_speed_angular

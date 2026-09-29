@@ -1,0 +1,40 @@
+# 正式比赛地图和站位尚未建立。禁止用 0,0,0 代替未配置。
+navigation:
+  ready: false
+  map_file: ""
+  stations:
+    start_area_4:
+      enabled: false
+      x: null
+      y: null
+      yaw: null
+      frame_id: map
+      status: MANUAL_CONFIGURATION_REQUIRED
+    box_rack_area_2:
+      enabled: false
+      x: null
+      y: null
+      yaw: null
+      frame_id: map
+      status: MANUAL_CONFIGURATION_REQUIRED
+    workbench_area_1:
+      enabled: false
+      x: null
+      y: null
+      yaw: null
+      frame_id: map
+      status: MANUAL_CONFIGURATION_REQUIRED
+    product_shelf_area_3:
+      enabled: false
+      x: null
+      y: null
+      yaw: null
+      frame_id: map
+      status: MANUAL_CONFIGURATION_REQUIRED
+    delivery_area_4:
+      enabled: false
+      x: null
+      y: null
+      yaw: null
+      frame_id: map
+      status: MANUAL_CONFIGURATION_REQUIRED

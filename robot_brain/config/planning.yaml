@@ -1,0 +1,20 @@
+planning:
+  curobo_endpoint: ""
+  esdf:
+    freeze_before_planning: true
+    min_observed_voxel_count: 1
+  barrier:
+    target_ready: true
+    grasp_candidates_ready: true
+    esdf_ready: true
+    joint_state_valid: true
+    tf_valid: true
+    robot_stationary: true
+  trajectory_limits:
+    max_joint_abs_rad: 7.0
+    max_velocity_rad_sec: 2.0
+    max_acceleration_rad_sec2: 4.0
+    max_start_joint_error_rad: 0.2
+    max_goal_pose_error: 0.05
+    max_duration_sec: 120.0
+    require_non_empty: true

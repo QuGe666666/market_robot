@@ -1,0 +1,13 @@
+jd_gripper_node:
+  ros__parameters:
+    arm_ip: "192.168.1.18"
+    arm_port: 8080
+    serial_device: "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_BG01DLWP-if00-port0"
+    gripper_device: 1
+    baudrate: 115200
+    default_speed: 255
+    default_force: 255
+    tool_voltage: 3
+    enable_tool_power: true
+    auto_init: true
+    publish_rate: 10.0

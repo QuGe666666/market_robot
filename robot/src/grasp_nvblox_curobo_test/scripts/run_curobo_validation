@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+container_name="grasp-nvblox-curobo-validation-$$"
+results_directory=/home/lh/robot/validation_results
+
+mkdir -p "$results_directory"
+
+cleanup() {
+  docker stop -t 1 "$container_name" >/dev/null 2>&1 || true
+  docker rm -f "$container_name" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT
+trap 'exit 0' INT TERM
+
+docker run --rm --name "$container_name" --runtime nvidia --network host --ipc host \
+  -e FASTRTPS_DEFAULT_PROFILES_FILE=/tmp/fastdds_udp.xml \
+  -e ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-0}" \
+  -v /opt/ros/humble:/opt/ros/humble:ro \
+  -v /home/lh/robot:/home/lh/robot:ro \
+  -v "$results_directory:$results_directory:rw" \
+  -v /home/lh/isaac_ros_ws:/workspaces/isaac_ros-dev:ro \
+  -v /home/lh/robot/src/curobo_realman_test/config/fastdds_udp.xml:/tmp/fastdds_udp.xml:ro \
+  --entrypoint /bin/bash \
+  lerobot-realman-orin:stage1 \
+  -lc 'source /opt/ros/humble/setup.bash
+source /workspaces/isaac_ros-dev/install/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/grasp_nvblox_curobo_test:${AMENT_PREFIX_PATH}
+export PYTHONPATH=/home/lh/robot/install/grasp_nvblox_curobo_test/lib/python3.10/site-packages:${PYTHONPATH}
+exec ros2 run grasp_nvblox_curobo_test curobo_validation_node "$@"' \
+  bash "$@" &
+container_pid=$!
+wait "$container_pid"

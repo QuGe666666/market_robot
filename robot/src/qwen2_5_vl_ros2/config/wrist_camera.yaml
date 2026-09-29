@@ -1,0 +1,40 @@
+/**:
+  ros__parameters:
+    arm: dual
+    model_path: /home/lh/robot/models/qwen2_5_vl/Qwen2.5-VL-7B-Instruct
+    input_width: 560
+    input_height: 420
+    max_new_tokens: 192
+    prompt_topic: /qwen_vl/prompt
+    depth_scale: 0.001
+    min_depth_m: 0.15
+    max_depth_m: 1.50
+    min_bbox_area_px: 1200.0
+    temporal_iou_threshold: 0.35
+    temporal_depth_delta_m: 0.06
+    temporal_position_delta_m: 0.08
+    temporal_required_votes: 2
+    tf_timeout_s: 0.25
+    move_closer_depth_m: 0.90
+    left_image_topic: /left_camera/left_camera/color/image_raw
+    left_depth_topic: /left_camera/left_camera/aligned_depth_to_color/image_raw
+    left_camera_info_topic: /left_camera/left_camera/aligned_depth_to_color/camera_info
+    left_tcp_pose_topic: /left/rm_driver/udp_arm_position
+    left_arm_state_topic: /left/rm_driver/get_current_arm_state_result
+    right_image_topic: /right_camera/right_camera/color/image_raw
+    right_depth_topic: /right_camera/right_camera/aligned_depth_to_color/image_raw
+    right_camera_info_topic: /right_camera/right_camera/aligned_depth_to_color/camera_info
+    right_tcp_pose_topic: /right/rm_driver/udp_arm_position
+    right_arm_state_topic: /right/rm_driver/get_current_arm_state_result
+    left_camera_frame: left_camera
+    left_base_frame: left_base
+    right_camera_frame: right_camera
+    right_base_frame: right_base
+    left_T_tcp_camera: [-0.02554522396412673, -0.9996398979648244, 0.00821680774376263, 0.08586910992241736,
+                        0.9996725402602394, -0.02555667584872534, -0.0012917310877542862, -0.044464920376784366,
+                        0.0015012602247793257, 0.008181119510099087, 0.9999654071523172, 0.01167547161011385,
+                        0.0, 0.0, 0.0, 1.0]
+    right_T_tcp_camera: [0.023371282388568115, 0.9997033126848156, 0.006860740959957698, -0.08473545954929662,
+                         -0.9997245307512411, 0.02335588196192684, 0.0023163315806366686, 0.04405154801645719,
+                         0.0021554056984068033, -0.0069129866762761465, 0.9999737820770547, 0.011625538459209396,
+                         0.0, 0.0, 0.0, 1.0]

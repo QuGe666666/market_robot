@@ -1,0 +1,41 @@
+# 真实 action/topic/service 未经统一确认时保持空字符串，Adapter 不会猜接口。
+interfaces:
+  navigation:
+    action: ""
+  vlm:
+    critical_head_camera_endpoint: ""
+    historical_wrist_prompt_topic: /qwen_vl/prompt
+    historical_wrist_result_topics: [/qwen_vl/left/result, /qwen_vl/right/result]
+    action: ""
+  graspnet:
+    action: ""
+    prompt_topic: /grounded_sam2/prompt
+    left_result_topic: /grounded_sam2/left/grasps
+    right_result_topic: /grounded_sam2/right/grasps
+  nvblox:
+    action: ""
+    esdf_service: /nvblox_node/get_esdf_and_gradient
+  curobo:
+    action: ""
+    left_target_topic: /left/target_pose
+    right_target_topic: /right/target_pose
+    left_status_topic: /left/curobo/status
+    right_status_topic: /right/curobo/status
+    left_trajectory_topic: /left/curobo/trajectory
+    right_trajectory_topic: /right/curobo/trajectory
+  driver:
+    execute_action: ""
+    left_joint_states_topic: /left/joint_states
+    right_joint_states_topic: /right/joint_states
+    left_stop_topic: /left/rm_driver/move_stop_cmd
+    right_stop_topic: /right/rm_driver/move_stop_cmd
+    left_high_following_topic: /left/rm_driver/movej_canfd_cmd
+    right_high_following_topic: /right/rm_driver/movej_canfd_cmd
+    emergency_stop_service: ""
+  wrist_cameras:
+    left_serial: "335222076738"
+    right_serial: "405622075108"
+    left_color_topic: /left_camera/left_camera/color/image_raw
+    left_depth_topic: /left_camera/left_camera/aligned_depth_to_color/image_raw
+    right_color_topic: /right_camera/right_camera/color/image_raw
+    right_depth_topic: /right_camera/right_camera/aligned_depth_to_color/image_raw

@@ -1,0 +1,345 @@
+项目交接文档
+更新时间：2026-08-24
+工作目录：/home/lh/Supermarket
+
+一、项目目标
+
+这是一个超市场景的机械臂视觉抓取系统：
+
+RealSense 腕部相机采集 RGB-D -> Qwen2.5-VL 识别目标并输出 bbox -> ROS2 抓取节点保存当前 RGB-D 帧 -> realsense_click_grasp.py 使用 GraspNet 生成抓取姿态 -> 转换到 RealMan 基座坐标 -> CuRobo 做 IK/轨迹检查 -> 发布 ROS2 PoseStamped -> RealMan/CuRobo 执行或 PLAN_ONLY。
+
+目前主要使用右臂，也保留左臂配置。左臂和右臂必须使用各自的相机、机器人 IP、标定矩阵和基座坐标转换，不能把两个基座当成同一个坐标系。
+
+二、重要文件
+
+1. /home/lh/Supermarket/realsense_click_grasp.py
+   核心抓取程序。支持：
+   - --arm left/right
+   - --bbox X1 Y1 X2 Y2，绕过鼠标四点选择
+   - --frame-bundle，读取 ROS2 保存的 RGB-D 帧
+   - --open y/n，是否生成虚拟圆柱目标
+   - --approach any/front/left/right
+   - --align-base-z y/n
+   - --base-z-direction positive/negative
+   - --angle
+   - --cylinder-axis-centering y/n
+   - --cylinder-surface
+   - --cylinder-diameter-scale
+   - --select-best N
+   - --top-k N
+   - --pregrasp-distance
+   - --collision-thresh
+   - CuRobo PLAN_ONLY IK/预抓取检查
+   - Open3D 可视化 RealMan 和 CuRobo 坐标轴
+
+2. /home/lh/Supermarket/realsense_grasp_detection.py
+   RealSense/GraspNet 点云和推理逻辑。detect_grasps() 先执行 GraspNet 解码，然后根据 --collision-thresh 做碰撞过滤，再 NMS 和 top-k。
+
+3. /home/lh/Supermarket/grasp_runtime.json
+   左右臂运行配置，包括：
+   - robot_ip
+   - camera_serial
+   - T_tcp_camera
+   - T_grasp_model_tcp
+   - R_base_reference
+   - TCP/虚拟夹爪轴定义
+   - base_up_vector
+   - max_tcp_up_angle_deg
+
+4. /home/lh/robot/src/supermarket_grasp_ros2/supermarket_grasp_ros2/grasp_node.py
+   ROS2 抓取节点。接收 Qwen 结果和 ROS RGB-D，调用 realsense_click_grasp.py，读取导出的 base quaternion，发布抓取目标和预抓取目标。
+
+5. /home/lh/robot/src/supermarket_grasp_ui/supermarket_grasp_ui/desktop_ui.py
+   本地 Qt UI，不是网页。负责左右臂切换、图像/深度显示、终端 1/2/3/4 控制、识别、抓取姿态生成、执行模式、angle、approach、有效期和 Qwen 重复次数等。
+
+6. /home/lh/robot/src/supermarket_grasp_ui/supermarket_grasp_ui/ui_node.py
+   UI 的 ROS2 后端，负责启动/停止终端进程、设置 Qwen 参数、调用抓取服务、读取状态。
+
+7. README 文件：
+   - /home/lh/robot/src/supermarket_grasp_ui/README.md
+   - /home/lh/robot/src/supermarket_grasp_ros2/README.md
+
+三、机械臂和相机配置
+
+右臂：
+   RealMan IP: 169.254.128.19:8080
+   RealSense serial: 405622075108
+   右手 T_tcp_camera 当前在 grasp_runtime.json 中维护。
+
+左臂：
+   RealMan IP: 169.254.128.18:8080
+   RealSense serial: 335222076738
+   左手 T_tcp_camera 当前在 grasp_runtime.json 中维护。
+
+右手原始手眼矩阵曾为：
+[[ 0.023371,  0.999703, -0.006861, -0.084735],
+ [-0.999725,  0.023356,  0.002316,  0.044052],
+ [ 0.002155, -0.006913,  0.999974,  0.011626],
+ [ 0,        0,         0,         1       ]]
+
+当前夹爪相对于法兰向前伸出约 10 cm，配置中 T_grasp_model_tcp 的平移必须反映这个实际安装偏移。不要只改相机外参；夹爪伸长属于 TCP/虚拟夹爪到法兰的变换。
+
+四、坐标系约定
+
+GraspNet 输出的是虚拟夹爪坐标系中的姿态，RealSense optical frame 轴为：
+   +X 向右，+Y 向下，+Z 向前。
+
+基本变换：
+   T_base_grasp = T_base_flange * T_flange_camera * T_camera_grasp
+
+位置：
+   p_base_grasp = p_base_flange + R_base_flange * (
+       p_flange_camera + R_flange_camera * p_camera_grasp
+   )
+
+旋转：
+   R_base_grasp = R_base_flange * R_flange_camera * R_camera_grasp
+
+T_grasp_model_tcp 用于把 GraspNet 虚拟夹爪坐标转换到实际 TCP/工具坐标。必须确认矩阵方向，不能凭感觉新增旋转矩阵。
+
+右臂和左臂的 RealMan 基座不是同一个坐标系。当前左臂还涉及 RealMan base 到 CuRobo driver_base 的轴变换：
+   p_curobo = [-z_realman, y_realman, x_realman]
+具体旋转也应在代码和 Open3D 轴显示中核对。
+
+五、approach 和姿态逻辑
+
+当前设计目标是：先用视觉/GraspNet选位置，再按 align-base-z 对齐 TCP +Z，最后依据 approach 构造虚拟夹爪 +X 的方向，不再依赖原始 GraspNet approach 方向。
+
+当 --align-base-z y 时，TCP/虚拟夹爪 +Z 与参考基座方向平行；由 --base-z-direction positive/negative 决定同向或反向。
+
+用户给出的最终方向约定：
+
+左臂：
+   approach=left  -> 虚拟夹爪 +X 指向左基座 -Z
+   approach=right -> 虚拟夹爪 +X 指向左基座 +Z
+   approach=front -> 虚拟夹爪 +X 指向左基座 -Y
+
+右臂：
+   approach=left  -> 虚拟夹爪 +X 指向右基座 +X
+   approach=right -> 虚拟夹爪 +X 指向右基座 -X
+   approach=front -> 虚拟夹爪 +X 指向右基座 -Y
+
+虚拟夹爪开口/接近方向当前按 +X 处理。+Y 是夹爪闭合方向，+Z 是工具轴方向。实际安装后，必须用实物 TCP 轴定义验证。
+
+--angle 的设计是：在 approach 和 base-Z 对齐完成后，绕圆柱轴/对齐轴旋转虚拟夹爪方向。它不是平移参数。
+
+--cylinder-axis-centering y 的含义：让虚拟夹爪 +X 朝向圆柱轴线，通常会重新调整姿态，不能把它理解成单纯移动夹爪 XYZ。当前默认应保持打开，除非需要诊断。
+
+虚拟圆柱相关参数：
+   --cylinder-diameter-scale：物体估计直径的缩放比例。
+   --cylinder-height-scale：圆柱轴向高度缩放。
+   --cylinder-forward-offset：圆柱向相机方向的偏移。
+   --cylinder-front-fraction：只保留相机前方的圆柱周向比例。
+   --cylinder-surface：限制姿态位于 front/left/right/any 表面区域。
+   --cylinder-surface-angle：表面角度容差。
+   --cylinder-grasp-height-fraction：沿物体高度抓取的位置，当前常见默认约 0.58，表示中间偏上。
+
+六、ROS2 工作流
+
+每个新终端先执行：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+
+终端 1：RealMan 双臂驱动（RM65）：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 launch rm_driver rm_65_dual_driver.launch.py
+
+正常输出应包含：
+   left.rm_driver: RM_65_driver is running
+   right.rm_driver: RM_65_driver is running
+   product_version = RM65-BI
+
+终端 2：右侧 RealSense ROS 驱动示例：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 launch realsense2_camera rs_launch.py \
+  serial_no:=_405622075108 \
+  enable_color:=true \
+  enable_depth:=true \
+  enable_sync:=true \
+  align_depth.enable:=true
+
+注意：当前实际系统通常使用 /right_camera/right_camera/... 这样的命名空间，必须以 ros2 topic list 为准。RealSense 出现 Depth stream start failure 或 Right MIPI error 时，先处理 USB/设备占用，不要继续排查 GraspNet。
+
+终端 3：Qwen2.5-VL（右臂）：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 launch qwen2_5_vl_ros2 wrist_qwen_vl.launch.py arm:=right
+
+正常输出包含：
+   Loading Qwen2.5-VL...
+   Qwen2.5-VL ready for right wrist camera; waiting for keywords
+
+终端 4：supermarket_grasp_ui 或 grasp 节点：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 launch supermarket_grasp_ros2 grasp.launch.py \
+  arm:=right \
+  use_ros_frame:=true \
+  color_topic:=/right_camera/right_camera/color/image_raw \
+  depth_topic:=/right_camera/right_camera/aligned_depth_to_color/image_raw \
+  camera_info_topic:=/right_camera/right_camera/aligned_depth_to_color/camera_info \
+  detection_topic:=/qwen_vl/right/result \
+  qwen_accept_only:=true \
+  target_label:=none \
+  min_detection_confidence:=0.0 \
+  auto_trigger:=false \
+  detection_timeout_s:=95.000 \
+  extra_args:="--open y --approach right --align-base-z y --select-best 3"
+
+不要写 target_label:=''，ROS2 launch 会报 malformed launch argument。使用 target_label:=none 或其它非空字符串；如果代码支持空值，使用 target_label:=\"\"。
+
+七、检查话题
+
+检查机械臂状态要另开终端，不要占用驱动终端：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 topic echo --once \
+  --qos-reliability reliable \
+  --qos-durability volatile \
+  /right/rm_driver/udp_arm_position
+
+检查 Qwen 结果：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 topic echo --once /qwen_vl/right/result
+
+如果 Qwen 话题没有输出，说明没有新的关键词触发或 Qwen 节点/相机话题没有正常连接。
+
+八、抓取服务正确顺序
+
+1. 先启动 RealMan 驱动。
+2. 启动 RealSense ROS 相机，并确认彩色、深度、camera_info 话题存在。
+3. 启动 Qwen 节点。
+4. 启动 grasp.launch.py 或 UI 后端。
+5. 给 Qwen 发送目标关键词，等待 /qwen_vl/right/result 出现 accepted 结果。
+6. 结果必须在 detection_timeout_s 有效期内。
+7. 调用抓取服务：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 service call /right/grasp/trigger std_srvs/srv/Trigger '{}'
+
+如果返回：
+   No accepted Qwen result received
+说明没有先发送关键词/没有 accepted 结果。
+
+如果返回：
+   ROS frame or YOLO detection is stale; ages ... detection=...
+说明 Qwen 检测已经过期。重新发送关键词，或者提高 grasp.launch.py 的 detection_timeout_s。
+
+九、最近问题的准确诊断
+
+最近 UI 日志中的实际命令类似：
+
+/home/lh/miniconda3/envs/grasp/bin/python /home/lh/Supermarket/realsense_click_grasp.py \
+  --arm right \
+  --runtime-config /home/lh/Supermarket/grasp_runtime.json \
+  --output /tmp/supermarket_right_82124_grasp.npy \
+  --bbox 323.429 21.714 433.143 379.429 \
+  --frame-bundle /tmp/supermarket_right_82124_grasp_frame.npz \
+  --open y --align-base-z y --select-best 3 --angle 0 --approach any
+
+真实日志：
+
+Loaded ROS RGB-D frame bundle
+YOLO-selected object: bbox=(323, 21, 433, 379), depth=0.386 m, pixels=21753
+Synthetic cylinder target enabled
+GraspNet collision-free, non-duplicate candidates: 0
+No valid grasp was detected
+FAILED No valid grasp was exported by realsense_click_grasp.py
+
+这表示：
+
+ROS RGB-D 帧和 Qwen bbox 已经成功传给 Python；RealMan 已连接；GraspNet 已加载；失败发生在 GraspNet 候选生成阶段。还没有进入 approach、angle、姿态对齐或 CuRobo。
+
+为什么单独运行 Python 可能成功：
+   - 单独运行通常采集的是新的 RealSense 帧。
+   - 单独运行通常使用手动四点区域，不是 Qwen bbox。
+   - ROS UI 使用保存的 frame_bundle 和自动 bbox。
+   - make_selected_cloud 使用随机点采样，重复运行本身也可能得到不同候选数。
+   - ROS 相机和独立 Python 的帧率/深度状态也可能不同。
+
+因此两次运行不是同一输入，不能只比较命令行参数。
+
+十、当前失败的诊断命令
+
+在 grasp 节点运行时临时设置：
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+export AMENT_PREFIX_PATH=/home/lh/robot/install/qwen2_5_vl_ros2:/home/lh/robot/install/supermarket_grasp_ros2:${AMENT_PREFIX_PATH}
+ros2 param set /supermarket_grasp extra_args \
+'--open y --align-base-z y --select-best 3 --angle 0 --approach any --collision-thresh -1'
+
+然后重新调用：
+
+ros2 service call /right/grasp/trigger std_srvs/srv/Trigger '{}'
+
+解释：
+   --collision-thresh -1 只用于诊断，临时跳过 GraspNet 碰撞过滤。
+   如果候选从 0 变为大于 0，说明碰撞阈值/点云碰撞过滤太严格。
+   如果仍为 0，说明问题在 ROS 帧、bbox、深度掩码、虚拟圆柱或 GraspNet 本身。
+
+再诊断虚拟圆柱：
+
+ros2 param set /supermarket_grasp extra_args \
+'--open n --align-base-z n --select-best 3 --angle 0 --approach any --collision-thresh -1'
+ros2 service call /right/grasp/trigger std_srvs/srv/Trigger '{}'
+
+如果 --open n 能生成姿态而 --open y 不能，问题就在虚拟圆柱点云参数，例如直径太小、深度估计错误、圆柱高度/前向偏移不合适。
+
+十一、不要混淆的事项
+
+1. --top-k 只限制最终保留的候选数量，不能让 0 个候选变成非 0。
+2. --select-best 只从已有候选中选择，不能生成候选。
+3. --approach any 只放宽方向筛选；如果 GraspNet 初始候选就是 0，它没有作用。
+4. CuRobo 只在最终姿态候选存在后检查 IK/轨迹；当前最新失败不是 CuRobo 拒绝。
+5. detection_timeout_s 只控制 Qwen 结果是否过期，不会提高 GraspNet 成功率。
+6. target_label 为空字符串在 ros2 launch 命令行中容易造成 malformed launch argument。
+7. RealSense 的 “Depth stream start failure” 或 “Right MIPI error” 是相机/USB/设备占用问题，需要先解决。
+
+十二、建议的后续开发
+
+优先级 1：给 grasp_node 增加 debug_keep_frame 参数，失败时保留 frame_bundle、bbox、mask 和虚拟圆柱点云，便于完全复现。
+
+优先级 2：增加确定性调试选项，例如 --seed，避免 make_selected_cloud 和虚拟圆柱随机采样导致同一帧结果不一致。
+
+优先级 3：把 bbox mask 可视化保存为 PNG，并输出有效深度占比、深度中位数、点云 XYZ 范围。
+
+优先级 4：在 UI 中将“Qwen 检测框”和“实际 GraspNet 使用的深度掩码”同时显示，避免框很大或包含背景时误判。
+
+优先级 5：若 --collision-thresh -1 能恢复候选，再重新调 collision_thresh、voxel_size 和物体 ROI，不要直接关闭碰撞过滤用于真实抓取。
+
+十三、交接时的第一步
+
+下一个聊天开始时，先读取本文件，然后检查：
+
+cd /home/lh/Supermarket
+tail -120 /tmp/supermarket_grasp_ui_grasp.log
+sed -n '1,220p' /home/lh/robot/src/supermarket_grasp_ros2/supermarket_grasp_ros2/grasp_node.py
+sed -n '280,335p' realsense_grasp_detection.py
+
+优先复现“--collision-thresh -1”和“--open n”的两组测试，并记录：
+   Selected-object points
+   Synthetic cylinder diameter
+   GraspNet collision-free candidates
+   Pose/CuRobo filter
+
+不要先修改坐标变换或 CuRobo；当前最新日志显示候选在 GraspNet 阶段已经是 0。

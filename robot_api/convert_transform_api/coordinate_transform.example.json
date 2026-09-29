@@ -1,0 +1,16 @@
+{
+  "rotation_cam_to_ee": [
+    [0.0, -1.0, 0.0],
+    [1.0, 0.0, 0.0],
+    [0.0, 0.0, 1.0]
+  ],
+  "translation_cam_to_ee_m": [-0.083, 0.035, -0.02],
+  "camera_point_unit": "m",
+  "ee_position_unit": "mm",
+  "ee_angle_unit": "rad",
+  "ee_euler_mode": "fixed_zyx_abc_xyz",
+  "output_position_unit": "mm",
+  "strict_rotation_check": true,
+  "rotation_det_tolerance": 0.001,
+  "orthogonal_tolerance": 0.001
+}

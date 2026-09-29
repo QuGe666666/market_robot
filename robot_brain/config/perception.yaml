@@ -1,0 +1,19 @@
+perception:
+  head_camera:
+    enabled: true
+    endpoint: ""
+    role: head_vlm_and_visual_verification
+  left_wrist_camera:
+    enabled: true
+    endpoint: ""
+    role: left_arm_graspnet_and_local_depth
+  right_wrist_camera:
+    enabled: true
+    endpoint: ""
+    role: right_arm_graspnet_and_local_depth
+  vlm:
+    endpoint: ""
+  graspnet:
+    endpoint: ""
+  nvblox:
+    endpoint: ""

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>giantcrab_joint_driver</name>
+  <version>0.1.0</version>
+  <description>基于创芯/ZLG兼容 ControlCANFD SDK 的巨蟹关节单轴 ROS2 驱动包，支持通过 Service / Topic 控制关节角度、读取状态、设置速度、限位和零位。</description>
+
+  <maintainer email="user@example.com">user</maintainer>
+  <license>MIT</license>
+
+  <!-- 构建工具 -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <!-- 编译 / 运行依赖 -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>ament_index_cpp</depend>
+
+  <!-- 自定义接口运行时依赖 -->
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- 声明本包包含接口定义 -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

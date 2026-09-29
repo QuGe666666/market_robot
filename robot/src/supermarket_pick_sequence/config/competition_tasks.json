@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "yolo_model_path": "/home/lh/CW/yolo/best.pt",
+  "box_qwen_fallback_prompts": ["蓝色物块", "蓝色", "蓝色物体", "蓝色长方体"],
+  "grasp_angle_priority": {
+    "RIGHT": [15],
+    "LEFT": [15]
+  },
+  "boxes": {
+    "1号箱子": {"yolo_label": "box", "qwen_prompt": "蓝色长条物块", "arm": "DUAL", "lift_height_mm": 530, "navigation_point": "C", "grasp_angles": [15]},
+    "2号箱子": {"yolo_label": "box", "qwen_prompt": "蓝色长条物块", "arm": "DUAL", "lift_height_mm": 530, "navigation_point": "B", "grasp_angles": [15]},
+    "3号箱子": {"yolo_label": "box", "qwen_prompt": "蓝色长条物块", "arm": "DUAL", "lift_height_mm": 100, "navigation_point": "C", "grasp_angles": [15]},
+    "4号箱子": {"yolo_label": "box", "qwen_prompt": "蓝色长条物块", "arm": "DUAL", "lift_height_mm": 100, "navigation_point": "B", "grasp_angles": [15]}
+  },
+  "objects": {
+    "加多宝": {"yolo_label": "bao", "qwen_prompt": "加多宝", "arm": "RIGHT", "lift_height_mm": 530, "navigation_point": "E", "retry_navigation_point": "D", "grasp_angles": [-45, -45, -30]},
+    "百事可乐": {"yolo_label": "kele", "qwen_prompt": "百事可乐", "arm": "RIGHT", "lift_height_mm": 530, "navigation_point": "F", "grasp_angles":[-45, -60, -30]},
+    "哇哈哈": {"yolo_label": "wahaha", "qwen_prompt": "矿泉水", "arm": "RIGHT", "lift_height_mm": 50, "navigation_point": "F", "grasp_angles": [-45, -40, -30]},
+    "雀巢咖啡": {"yolo_label": "kafei", "qwen_prompt": "雀巢咖啡", "arm": "RIGHT", "lift_height_mm": 50, "navigation_point": "E", "grasp_angles": [-45, -60, -30]},
+    "雪碧": {"yolo_label": "xuebi", "qwen_prompt": "雪碧", "arm": "LEFT", "lift_height_mm": 50, "navigation_point": "E", "retry_navigation_point": "F", "grasp_angles": [60, 45, 30]},
+    "奥利奥": {"yolo_label": "ao", "qwen_prompt": "奥利奥", "arm": "LEFT", "lift_height_mm": 530, "navigation_point": "G", "grasp_angles": [45, 30, 60]},
+    "焦糖瓜子": {"yolo_label": "guazi", "qwen_prompt": "焦糖瓜子", "arm": "LEFT", "lift_height_mm": 530, "navigation_point": "I", "retry_navigation_point": "H", "grasp_angles": [30, 50, 45]},
+    "脆升升": {"yolo_label": "cui", "qwen_prompt": "脆升升", "arm": "RIGHT", "lift_height_mm": 530, "navigation_point": "G", "retry_navigation_point": "H", "grasp_angles": [-45, -30, -60]},
+    "好丽友派": {"yolo_label": "pai", "qwen_prompt": "好丽友派", "arm": "RIGHT", "lift_height_mm": 50, "navigation_point": "G", "retry_navigation_point": "H", "grasp_angles": [-20, -65, -50]},
+    "果粒橙": {"yolo_label": "chengzi", "qwen_prompt": "果粒橙", "arm": "LEFT", "lift_height_mm": 50, "navigation_point": "D", "grasp_angles":[45, 30, 60]},
+    "茉莉茶": {"yolo_label": "moli", "qwen_prompt": "茉莉茶饮料", "arm": "LEFT", "lift_height_mm": 530, "navigation_point": "D", "grasp_angles": [45, 30, 60]},
+    "彩虹糖": {"yolo_label": "cai", "qwen_prompt": "红色包装的彩虹软糖", "arm": "LEFT", "lift_height_mm": 50, "navigation_point": "H", "retry_navigation_point": "I", "grasp_angles": [60, 45, 30]},
+    "口香糖": {"yolo_label": "yida", "qwen_prompt": "益达", "arm": "RIGHT", "lift_height_mm": 50, "navigation_point": "I", "grasp_angles":  [-45, -60, -30]},
+    "薯片": {"yolo_label": "shu", "qwen_prompt": "黄色盖子的绿色罐装薯片", "arm": "LEFT", "lift_height_mm": 50, "navigation_point": "G", "grasp_angles": [45, 30, 60]},
+    "阿萨姆奶茶": {"yolo_label": "asamu", "qwen_prompt": "阿萨姆奶茶", "arm": "LEFT", "lift_height_mm": 530, "navigation_point": "E", "retry_navigation_point": "F", "grasp_angles": [60, 45, 30]},
+    "果粒爽": {"yolo_label": "guo", "qwen_prompt": "果粒爽", "arm": "RIGHT", "lift_height_mm": 530, "navigation_point": "I", "grasp_angles": [-45, -60, -30]}
+  },
+  "latest_runtime": {
+    "camera_serials": {"left": "335222076738", "right": "405622075108"},
+    "qwen_model_path": "/home/lh/robot/models/qwen2_5_vl/Qwen2.5-VL-7B-Instruct",
+    "qwen_temporal_required_votes": 1,
+    "yolo_confidence_thresh": 0.3,
+    "yolo_max_inference_fps": 5.0,
+    "grasp_detection_timeout_s": 5.0,
+    "grasp_frame_sync_tolerance_s": 0.25,
+    "grasp_extra_args": "--open y --align-base-z y --select-best 3",
+    "curobo": {"execute": false, "max_attempts": 30, "staged_grasp": true, "high_following": true, "interpolation_dt": 0.008, "enable_nvblox": false, "voxel_size": 0.015, "collision_margin": 0.02}
+  }
+}

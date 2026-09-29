@@ -1,0 +1,5 @@
+float64 min_angle_deg
+float64 max_angle_deg
+---
+bool success
+string message

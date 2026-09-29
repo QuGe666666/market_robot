@@ -1,0 +1,6 @@
+# Joint angles in degrees. This is the single source of truth for FSM motion poses.
+poses:
+  right_photo: [99.38, -66.413, 86.796, -7.1, 91.23, -85.078]
+  left_photo: [-98.302, 61.592, -88.023, 7.944, -85.877, 84.769]
+  left_place: [-96.396, -53.125, -70.927, -0.524, -17.867, 89.324]
+  right_place: [96.648, 55.85, 66.45, 1.395, 24.842, -87.166]

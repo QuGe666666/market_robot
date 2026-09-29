@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+container_name="curobo_realman_test_$$"
+execution_log_dir="/home/lh/robot/runtime_logs/curobo_execution"
+mkdir -p "$execution_log_dir"
+
+cleanup() {
+  docker stop -t 1 "$container_name" >/dev/null 2>&1 || true
+  docker rm -f "$container_name" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT INT TERM
+
+docker run --rm --name "$container_name" --runtime nvidia --network host --ipc host \
+  -e FASTRTPS_DEFAULT_PROFILES_FILE \
+  -e ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-0}" \
+  -e ROS_LOCALHOST_ONLY="${ROS_LOCALHOST_ONLY:-0}" \
+  -e RMW_IMPLEMENTATION="${RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}" \
+  -v /opt/ros/humble:/opt/ros/humble:ro \
+  -v /home/lh/robot:/home/lh/robot:ro \
+  -v "$execution_log_dir:$execution_log_dir:rw" \
+  -v /home/lh/isaac_ros_ws:/workspaces/isaac_ros-dev:ro \
+  --entrypoint /bin/bash \
+  lerobot-realman-orin:stage1 \
+  -lc 'source /opt/ros/humble/setup.bash && source /workspaces/isaac_ros-dev/install/setup.bash && source /home/lh/robot/install/setup.bash && export AMENT_PREFIX_PATH=/home/lh/robot/install/curobo_realman_test:${AMENT_PREFIX_PATH} && export PYTHONPATH=/home/lh/robot/install/curobo_realman_test/lib/python3.10/site-packages:${PYTHONPATH} && exec ros2 run curobo_realman_test planner_node "$@"' \
+  bash "$@" &
+container_pid=$!
+wait "$container_pid"

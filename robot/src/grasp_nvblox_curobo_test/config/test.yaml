@@ -1,0 +1,13 @@
+/**:
+  ros__parameters:
+    use_mock_grasp: true
+    base_frame: right_base
+    camera_frame: right_camera_color_optical_frame
+    real_grasp_input_topic: /grasp_pose_camera
+    grasp_pose_output_topic: /grasp_pose_base
+    mock_goal_position: [-0.460138, 0.043625, 0.212095]
+    mock_goal_orientation_xyzw: [-0.423229, -0.637015, 0.393148, -0.510413]
+    grasp_tool_translation: [0.0, 0.0, 0.0]
+    grasp_tool_orientation_xyzw: [0.0, 0.7071067811865476, 0.0, 0.7071067811865476]
+    tf_timeout_s: 0.75
+    mock_publish_period_s: 1.0

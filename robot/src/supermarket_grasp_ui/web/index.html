@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supermarket Grasp Control</title>
+  <style>
+    :root { color-scheme: dark; --bg:#101418; --panel:#191f26; --line:#303a44; --text:#e8edf2; --muted:#9ca9b5; --accent:#4cc2a5; --warn:#e6b450; --danger:#e16d6d; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:14px/1.45 system-ui,-apple-system,"Noto Sans SC",sans-serif; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; border-bottom:1px solid var(--line); background:#12171c; }
+    h1 { font-size:20px; margin:0; letter-spacing:.2px; }
+    .connection { color:var(--muted); font-size:12px; }
+    main { display:grid; grid-template-columns:minmax(520px,1.3fr) minmax(360px,.9fr); gap:14px; padding:14px; max-width:1600px; margin:auto; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:14px; }
+    .controls { grid-column:1/-1; display:grid; grid-template-columns:150px minmax(220px,1fr) 180px auto auto auto; gap:10px; align-items:end; }
+    label { display:flex; flex-direction:column; gap:5px; color:var(--muted); font-size:12px; }
+    input, select, button { min-height:38px; border:1px solid #46535f; border-radius:5px; background:#11161b; color:var(--text); padding:0 11px; font:inherit; }
+    button { cursor:pointer; background:#23313a; border-color:#4d626e; font-weight:600; }
+    button:hover { background:#2d414b; }
+    button.primary { background:#1e6e63; border-color:#4cc2a5; }
+    button.execute { background:#7b3c42; border-color:#e16d6d; }
+    button:disabled { opacity:.45; cursor:not-allowed; }
+    .section-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-weight:700; }
+    .section-title span { color:var(--muted); font-weight:400; font-size:12px; }
+    .views { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    figure { margin:0; background:#0c1013; border:1px solid var(--line); border-radius:5px; overflow:hidden; }
+    figure img { display:block; width:100%; aspect-ratio:4/3; object-fit:contain; background:#080b0d; }
+    figcaption { padding:7px 9px; color:var(--muted); font-size:12px; }
+    .status { min-height:28px; padding:7px 9px; border-left:3px solid var(--accent); background:#11181c; color:#c7d4dc; white-space:pre-wrap; }
+    .status.warn { border-left-color:var(--warn); }
+    .status.error { border-left-color:var(--danger); color:#f4c1c1; }
+    .result-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .metric { border:1px solid var(--line); border-radius:5px; padding:9px; min-height:72px; }
+    .metric b { display:block; margin-bottom:5px; color:var(--muted); font-size:11px; font-weight:500; }
+    .metric code { font-size:12px; word-break:break-word; }
+    pre { margin:0; max-height:220px; overflow:auto; padding:10px; background:#0d1216; border:1px solid var(--line); border-radius:5px; color:#c8d4dc; font-size:11px; }
+    canvas { display:block; width:100%; height:310px; background:#0a0e11; border:1px solid var(--line); border-radius:5px; }
+    .hint { color:var(--muted); font-size:12px; margin-top:7px; }
+    .badge { display:inline-block; padding:3px 7px; border-radius:10px; background:#26353b; color:#bcd4d5; font-size:11px; }
+    @media (max-width: 1000px) { main { grid-template-columns:1fr; } .controls { grid-column:auto; grid-template-columns:1fr 1fr; } }
+    @media (max-width: 620px) { .controls, .views, .result-grid { grid-template-columns:1fr; } header { align-items:flex-start; gap:8px; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>超市物体识别与抓取</h1>
+    <div class="connection" id="connection">正在连接 ROS2...</div>
+  </header>
+  <main>
+    <section class="panel controls">
+      <label>机械臂<select id="arm"><option value="right">右臂</option><option value="left">左臂</option></select></label>
+      <label>商品关键词<input id="keyword" value="百事可乐" placeholder="例如：百事可乐"></label>
+      <label>规划模式<select id="mode"><option value="plan_only">虚拟规划（PLAN_ONLY）</option><option value="execute">真实执行（EXECUTE）</option></select></label>
+      <button class="primary" id="recognize">开始识别</button>
+      <button id="generate">生成抓取姿态</button>
+      <button class="execute" id="execute">开始执行</button>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">相机画面 <span id="frame-info">--</span></div>
+      <div class="views">
+        <figure><img id="color" alt="color"><figcaption>彩色/识别标注画面</figcaption></figure>
+        <figure><img id="depth" alt="depth"><figcaption>对齐深度画面</figcaption></figure>
+      </div>
+      <div class="hint">界面自动订阅所选机械臂的 RGB、对齐深度和 Qwen 标注图像。</div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">运行状态 <span class="badge" id="mode-badge">PLAN_ONLY</span></div>
+      <div class="status" id="status">等待 ROS2 节点。</div>
+      <div class="result-grid" style="margin-top:10px">
+        <div class="metric"><b>识别状态</b><code id="recognition">--</code></div>
+        <div class="metric"><b>Qwen 检测框</b><code id="bbox">--</code></div>
+        <div class="metric"><b>抓取节点</b><code id="grasp-status">--</code></div>
+        <div class="metric"><b>CuRobo</b><code id="curobo-status">--</code></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">抓取姿态预览 <span>虚拟夹爪坐标轴示意</span></div>
+      <canvas id="pose" width="900" height="420"></canvas>
+      <div class="hint">红/绿/蓝分别表示抓取姿态的局部 +X/+Y/+Z；下方数值为 ROS PoseStamped。</div>
+      <pre id="pose-data">尚未生成抓取姿态。</pre>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">识别与候选详情 <span>用于检查结果和调参</span></div>
+      <pre id="details">尚未收到 Qwen 结果。</pre>
+    </section>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let state = null;
+    async function post(path, body) {
+      const response = await fetch(path, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body || {})});
+      const data = await response.json();
+      if (!response.ok || data.ok === false) throw new Error(data.error || data.message || '请求失败');
+      return data;
+    }
+    function showError(error) { $('status').textContent = error.message || String(error); $('status').className = 'status error'; }
+    function poseText(pose) { return pose ? JSON.stringify(pose, null, 2) : '尚未生成抓取姿态。'; }
+    function drawPose(pose) {
+      const canvas = $('pose'), ctx = canvas.getContext('2d'), w = canvas.width, h = canvas.height;
+      ctx.clearRect(0,0,w,h); ctx.fillStyle='#0a0e11'; ctx.fillRect(0,0,w,h);
+      ctx.strokeStyle='#253039'; ctx.lineWidth=1;
+      for (let x=0; x<w; x+=45) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+      for (let y=0; y<h; y+=45) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+      const cx=w/2, cy=h/2, scale=95;
+      ctx.strokeStyle='#5a6872'; ctx.beginPath(); ctx.arc(cx,cy,60,0,Math.PI*2); ctx.stroke();
+      if (!pose) { ctx.fillStyle='#9ca9b5'; ctx.fillText('等待抓取姿态', cx-42, cy); return; }
+      const q=pose.orientation, x=q.x, y=q.y, z=q.z, ww=q.w;
+      const R=[[1-2*(y*y+z*z),2*(x*y-z*ww),2*(x*z+y*ww)],[2*(x*y+z*ww),1-2*(x*x+z*z),2*(y*z-x*ww)],[2*(x*z-y*ww),2*(y*z+x*ww),1-2*(x*x+y*y)]];
+      const axes=[['+X','#e16d6d',R[0]],['+Y','#69c38e',R[1]],['+Z','#72a6e8',R[2]]];
+      axes.forEach(([name,color,a])=>{ const ex=cx+a[0]*scale, ey=cy-a[1]*scale; ctx.strokeStyle=color; ctx.fillStyle=color; ctx.lineWidth=6; ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(ex,ey); ctx.stroke(); ctx.font='bold 18px sans-serif'; ctx.fillText(name,ex+7,ey-7); });
+      ctx.fillStyle='#d7e0e7'; ctx.font='14px sans-serif'; ctx.fillText(`frame: ${pose.frame_id || '--'}`,18,25); ctx.fillText(`TCP xyz: ${pose.position.x.toFixed(3)}, ${pose.position.y.toFixed(3)}, ${pose.position.z.toFixed(3)} m`,18,48);
+    }
+    function update(data) {
+      state=data; $('connection').textContent=`ROS2 已连接 | ${data.arm} | ${data.planner_execute===true?'CuRobo EXECUTE':data.planner_execute===false?'CuRobo PLAN_ONLY':'CuRobo 未连接'}`;
+      $('arm').value=data.arm; $('mode').value=data.mode; $('mode-badge').textContent=data.mode==='execute'?'EXECUTE':'PLAN_ONLY';
+      $('color').src=data.color || ''; $('depth').src=data.depth || '';
+      $('frame-info').textContent=data.bbox ? `bbox: ${data.bbox.map(v=>Number(v).toFixed(1)).join(', ')}` : '--';
+      $('recognition').textContent=`${data.recognition.state}: ${data.recognition.message}`;
+      $('bbox').textContent=data.bbox ? JSON.stringify(data.bbox) : '--'; $('grasp-status').textContent=data.grasp_status || '--'; $('curobo-status').textContent=data.curobo_status || '--';
+      $('status').textContent=data.message || '等待操作'; $('status').className='status'; $('pose-data').textContent=poseText(data.target || data.pregrasp); drawPose(data.target || data.pregrasp);
+      $('details').textContent=JSON.stringify({recognition:data.recognition,result:data.result,candidates:data.candidates}, null, 2);
+    }
+    async function refresh(){ try { update(await (await fetch('/api/state')).json()); } catch(e) { $('connection').textContent='ROS2 未连接'; } }
+    $('arm').onchange=async(e)=>{try{await post('/api/arm',{arm:e.target.value});}catch(err){showError(err)}};
+    $('mode').onchange=async(e)=>{try{await post('/api/mode',{mode:e.target.value});}catch(err){showError(err)}};
+    $('recognize').onclick=async()=>{try{await post('/api/recognize',{keyword:$('keyword').value});}catch(err){showError(err)}};
+    $('generate').onclick=async()=>{try{await post('/api/generate');}catch(err){showError(err)}};
+    $('execute').onclick=async()=>{if(!confirm($('mode').value==='execute'?'确认向真实机械臂发送目标姿态？':'发送目标姿态进行虚拟规划？'))return;try{await post('/api/execute');}catch(err){showError(err)}};
+    setInterval(refresh,500); refresh();
+  </script>
+</body>
+</html>

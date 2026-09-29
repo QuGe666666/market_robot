@@ -1,0 +1,9 @@
+std_msgs/Header header
+string map_name
+int32 floor
+float64 resolution
+int32 width
+int32 height
+float64 origin_x
+float64 origin_y
+string raw_json

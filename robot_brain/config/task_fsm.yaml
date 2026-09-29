@@ -1,0 +1,23 @@
+task_fsm:
+  initial_state: IDLE
+  max_retries: 3
+  order_timeout_sec: 900
+  competition_timeout_sec: 1800
+  require_head_visual_verification: true
+  states_source: robot_brain/competition_task_fsm.py
+verification:
+  # 每个关键帧只声明自己的责任节点；多个节点表示这些节点需要共同满足。
+  K1_PREGRASP_REACHED:
+    required_sources: [curobo]
+  K3_GRASP_SUCCESS:
+    required_sources: [gripper]
+  K4_LIFT_SUCCESS:
+    required_sources: [driver, gripper]
+  K6_PLACE_SUCCESS:
+    required_sources: [driver, gripper, placement]
+  K7_BOX_PICK_SUCCESS:
+    required_sources: [driver, gripper]
+  K8_BOX_PLACE_SUCCESS:
+    required_sources: [driver, gripper]
+  K9_DELIVERY_SUCCESS:
+    required_sources: [delivery]

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+set -u
+export PYTHONPATH="/home/lh/robot/build/grounded_sam2_ros2:${PYTHONPATH:-}"
+
+exec /usr/bin/python3 -m grounded_sam2_ros2.perception_node "$@"

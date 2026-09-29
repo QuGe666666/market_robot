@@ -1,0 +1,4 @@
+float64 speed_rpm
+---
+bool success
+string message

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ -z "${DISPLAY:-}" ]]; then
+  echo "DISPLAY is unset; RViz cannot start" >&2
+  exit 1
+fi
+
+set +u
+source /opt/ros/humble/setup.bash
+source /home/lh/robot/install/setup.bash
+set -u
+
+# The Isaac ROS 3.1 symlink install was built at /workspaces/isaac_ros-dev.
+# Recreate only the nvblox RViz ament index in a disposable host prefix.
+rviz_overlay=$(mktemp -d /tmp/nvblox-rviz-overlay.XXXXXX)
+cleanup() {
+  rm -rf -- "$rviz_overlay"
+}
+trap cleanup EXIT
+
+mkdir -p \
+  "$rviz_overlay/lib" \
+  "$rviz_overlay/share/ament_index/resource_index/packages" \
+  "$rviz_overlay/share/ament_index/resource_index/rviz_common__pluginlib__plugin" \
+  "$rviz_overlay/share/nvblox_rviz_plugin"
+
+cp /home/lh/isaac_ros_ws/build/nvblox_rviz_plugin/ament_cmake_index/share/ament_index/resource_index/rviz_common__pluginlib__plugin/nvblox_rviz_plugin \
+  "$rviz_overlay/share/ament_index/resource_index/rviz_common__pluginlib__plugin/nvblox_rviz_plugin"
+touch "$rviz_overlay/share/ament_index/resource_index/packages/nvblox_rviz_plugin"
+cp /home/lh/isaac_ros_ws/src/isaac_ros_nvblox/nvblox_rviz_plugin/package.xml \
+  "$rviz_overlay/share/nvblox_rviz_plugin/package.xml"
+cp /home/lh/isaac_ros_ws/src/isaac_ros_nvblox/nvblox_rviz_plugin/plugins_description.xml \
+  "$rviz_overlay/share/nvblox_rviz_plugin/plugins_description.xml"
+cp -a /home/lh/isaac_ros_ws/src/isaac_ros_nvblox/nvblox_rviz_plugin/icons \
+  "$rviz_overlay/share/nvblox_rviz_plugin/icons"
+ln -s /home/lh/isaac_ros_ws/install/nvblox_rviz_plugin/lib/libnvblox_rviz_plugin.so \
+  "$rviz_overlay/lib/libnvblox_rviz_plugin.so"
+
+export AMENT_PREFIX_PATH="$rviz_overlay:${AMENT_PREFIX_PATH:-}"
+export LD_LIBRARY_PATH="$rviz_overlay/lib:/home/lh/isaac_ros_ws/install/nvblox_msgs/lib:${LD_LIBRARY_PATH:-}"
+
+rviz2 -d /home/lh/robot/src/grasp_nvblox_curobo_test/rviz/validation.rviz

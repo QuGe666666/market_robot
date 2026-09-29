@@ -1,0 +1,1555 @@
+{
+  "created_at": "2026-04-29T18:52:26",
+  "config": {
+    "model": "auto",
+    "source": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs",
+    "conf": 0.25,
+    "iou": 0.45,
+    "imgsz": 640,
+    "device": "auto",
+    "max_det": 300,
+    "target_class": null,
+    "target_id": null,
+    "single_target": false,
+    "select_mode": "top_conf",
+    "output_root": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs",
+    "name": "auto",
+    "exist_ok": false,
+    "save_images": true,
+    "save_txt": true,
+    "save_json": true,
+    "save_crop": false,
+    "show": false,
+    "draw_boxes": true,
+    "draw_center": true,
+    "draw_score": true,
+    "draw_crosshair": false,
+    "line_width": 2
+  },
+  "model": "/home/along/天链单臂/robot_api/yolo_api/training/runs/detect_20260429_181937/weights/best.pt",
+  "source": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs",
+  "run_name": "image_predict_20260429_185225",
+  "output_dir": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225",
+  "output_image_dir": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images",
+  "output_label_dir": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels",
+  "output_crop_dir": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/crops",
+  "names": {
+    "0": "red",
+    "1": "yellow",
+    "2": "blue"
+  },
+  "summary": {
+    "total_images": 20,
+    "success_images": 20,
+    "failed_images": 0,
+    "total_objects": 60,
+    "class_counts": {
+      "yellow": 20,
+      "blue": 20,
+      "red": 20
+    }
+  },
+  "items": [
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114022_658_frame0004（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9992027878761292,
+          "bbox_xyxy": [
+            244.39743041992188,
+            112.23641967773438,
+            456.3755798339844,
+            339.0475769042969
+          ],
+          "center": [
+            350.3865051269531,
+            225.64199829101562
+          ],
+          "width": 211.9781494140625,
+          "height": 226.8111572265625,
+          "area": 48079.00937534869,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9984209537506104,
+          "bbox_xyxy": [
+            461.07122802734375,
+            138.02816772460938,
+            638.4165649414062,
+            358.29425048828125
+          ],
+          "center": [
+            549.743896484375,
+            248.1612091064453
+          ],
+          "width": 177.3453369140625,
+          "height": 220.26608276367188,
+          "area": 39063.16265846416,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9948727488517761,
+          "bbox_xyxy": [
+            112.53341674804688,
+            51.23921203613281,
+            298.780029296875,
+            253.6662139892578
+          ],
+          "center": [
+            205.65672302246094,
+            152.4527130126953
+          ],
+          "width": 186.24661254882812,
+          "height": 202.427001953125,
+          "area": 37701.343402184546,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114022_658_frame0004（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114022_658_frame0004（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114023_057_frame0006（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.99885094165802,
+          "bbox_xyxy": [
+            177.60826110839844,
+            93.4322509765625,
+            399.0341796875,
+            320.6381530761719
+          ],
+          "center": [
+            288.3212203979492,
+            207.0352020263672
+          ],
+          "width": 221.42591857910156,
+          "height": 227.20590209960938,
+          "area": 50309.275578999426,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9958980679512024,
+          "bbox_xyxy": [
+            392.00726318359375,
+            135.82119750976562,
+            560.1384887695312,
+            358.6293640136719
+          ],
+          "center": [
+            476.0728759765625,
+            247.22528076171875
+          ],
+          "width": 168.1312255859375,
+          "height": 222.80816650390625,
+          "area": 37461.010104857385,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9933358430862427,
+          "bbox_xyxy": [
+            45.28863525390625,
+            17.409088134765625,
+            249.87301635742188,
+            224.1483154296875
+          ],
+          "center": [
+            147.58082580566406,
+            120.77870178222656
+          ],
+          "width": 204.58438110351562,
+          "height": 206.73922729492188,
+          "area": 42295.61686595064,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114023_057_frame0006（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114023_057_frame0006（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114023_190_frame0007（复件）（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9990334510803223,
+          "bbox_xyxy": [
+            177.12168884277344,
+            91.9835205078125,
+            401.509521484375,
+            323.7288818359375
+          ],
+          "center": [
+            289.3156051635742,
+            207.856201171875
+          ],
+          "width": 224.38783264160156,
+          "height": 231.745361328125,
+          "area": 52000.839353162795,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9965998530387878,
+          "bbox_xyxy": [
+            389.79473876953125,
+            137.89889526367188,
+            560.5769653320312,
+            365.35040283203125
+          ],
+          "center": [
+            475.18585205078125,
+            251.62464904785156
+          ],
+          "width": 170.7822265625,
+          "height": 227.45150756835938,
+          "area": 38844.674897521734,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9955281615257263,
+          "bbox_xyxy": [
+            46.821136474609375,
+            11.455535888671875,
+            254.84405517578125,
+            224.0950469970703
+          ],
+          "center": [
+            150.8325958251953,
+            117.7752914428711
+          ],
+          "width": 208.02291870117188,
+          "height": 212.63951110839844,
+          "area": 44233.8917319593,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114023_190_frame0007（复件）（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114023_190_frame0007（复件）（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114025_194_frame0018.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "red": 1,
+        "yellow": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9983171224594116,
+          "bbox_xyxy": [
+            392.5653076171875,
+            60.5587158203125,
+            589.8570556640625,
+            265.8235168457031
+          ],
+          "center": [
+            491.211181640625,
+            163.1911163330078
+          ],
+          "width": 197.291748046875,
+          "height": 205.26480102539062,
+          "area": 40497.051406793296,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9935283064842224,
+          "bbox_xyxy": [
+            101.50516510009766,
+            95.92449951171875,
+            249.95236206054688,
+            286.3459777832031
+          ],
+          "center": [
+            175.72876358032227,
+            191.13523864746094
+          ],
+          "width": 148.44719696044922,
+          "height": 190.42147827148438,
+          "area": 28267.534690466942,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9856742024421692,
+          "bbox_xyxy": [
+            252.41348266601562,
+            110.90422821044922,
+            397.3832702636719,
+            297.8123779296875
+          ],
+          "center": [
+            324.89837646484375,
+            204.35830307006836
+          ],
+          "width": 144.96978759765625,
+          "height": 186.90814971923828,
+          "area": 27096.034765068907,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114025_194_frame0018.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114025_194_frame0018.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114026_198_frame0022（另一个复件）（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.999308705329895,
+          "bbox_xyxy": [
+            206.96078491210938,
+            18.135833740234375,
+            422.4985656738281,
+            297.0896911621094
+          ],
+          "center": [
+            314.72967529296875,
+            157.61276245117188
+          ],
+          "width": 215.53778076171875,
+          "height": 278.953857421875,
+          "area": 60125.095363631845,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9990635514259338,
+          "bbox_xyxy": [
+            419.06060791015625,
+            0.2295989990234375,
+            640.0,
+            252.89161682128906
+          ],
+          "center": [
+            529.5303039550781,
+            126.56060791015625
+          ],
+          "width": 220.93939208984375,
+          "height": 252.66201782226562,
+          "area": 55822.992621844634,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9728777408599854,
+          "bbox_xyxy": [
+            0.417236328125,
+            0.0,
+            203.91073608398438,
+            270.9497985839844
+          ],
+          "center": [
+            102.16398620605469,
+            135.4748992919922
+          ],
+          "width": 203.49349975585938,
+          "height": 270.9497985839844,
+          "area": 55136.52277200017,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114026_198_frame0022（另一个复件）（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114026_198_frame0022（另一个复件）（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114026_601_frame0024（复件）（另一个复件）（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9993402361869812,
+          "bbox_xyxy": [
+            173.1329345703125,
+            161.19906616210938,
+            391.6455078125,
+            426.0939636230469
+          ],
+          "center": [
+            282.38922119140625,
+            293.6465148925781
+          ],
+          "width": 218.5125732421875,
+          "height": 264.8948974609375,
+          "area": 57882.86568291485,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9992557168006897,
+          "bbox_xyxy": [
+            392.86859130859375,
+            124.01809692382812,
+            639.2296752929688,
+            394.0285949707031
+          ],
+          "center": [
+            516.0491333007812,
+            259.0233459472656
+          ],
+          "width": 246.361083984375,
+          "height": 270.010498046875,
+          "area": 66520.0789859891,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9901970624923706,
+          "bbox_xyxy": [
+            0.0,
+            128.3868408203125,
+            177.42831420898438,
+            378.24700927734375
+          ],
+          "center": [
+            88.71415710449219,
+            253.31692504882812
+          ],
+          "width": 177.42831420898438,
+          "height": 249.86016845703125,
+          "area": 44332.26847730391,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114026_601_frame0024（复件）（另一个复件）（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114026_601_frame0024（复件）（另一个复件）（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114028_798_frame0030（另一个复件）（复件）（另一个复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "red": 1,
+        "yellow": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9980185031890869,
+          "bbox_xyxy": [
+            445.2177734375,
+            160.27880859375,
+            638.9598388671875,
+            343.9609680175781
+          ],
+          "center": [
+            542.0888061523438,
+            252.11988830566406
+          ],
+          "width": 193.7420654296875,
+          "height": 183.68215942382812,
+          "area": 35586.9609493576,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9950835704803467,
+          "bbox_xyxy": [
+            123.2224349975586,
+            124.96694946289062,
+            284.3889465332031,
+            283.5585632324219
+          ],
+          "center": [
+            203.80569076538086,
+            204.26275634765625
+          ],
+          "width": 161.16651153564453,
+          "height": 158.59161376953125,
+          "area": 25559.65715004364,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9943389296531677,
+          "bbox_xyxy": [
+            265.4729919433594,
+            155.083740234375,
+            438.1293640136719,
+            348.91680908203125
+          ],
+          "center": [
+            351.8011779785156,
+            252.00027465820312
+          ],
+          "width": 172.6563720703125,
+          "height": 193.83306884765625,
+          "area": 33466.51445449144,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114028_798_frame0030（另一个复件）（复件）（另一个复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114028_798_frame0030（另一个复件）（复件）（另一个复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114028_798_frame0030（另一个复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "red": 1,
+        "yellow": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9980185031890869,
+          "bbox_xyxy": [
+            445.2177734375,
+            160.27880859375,
+            638.9598388671875,
+            343.9609680175781
+          ],
+          "center": [
+            542.0888061523438,
+            252.11988830566406
+          ],
+          "width": 193.7420654296875,
+          "height": 183.68215942382812,
+          "area": 35586.9609493576,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9950835704803467,
+          "bbox_xyxy": [
+            123.2224349975586,
+            124.96694946289062,
+            284.3889465332031,
+            283.5585632324219
+          ],
+          "center": [
+            203.80569076538086,
+            204.26275634765625
+          ],
+          "width": 161.16651153564453,
+          "height": 158.59161376953125,
+          "area": 25559.65715004364,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9943389296531677,
+          "bbox_xyxy": [
+            265.4729919433594,
+            155.083740234375,
+            438.1293640136719,
+            348.91680908203125
+          ],
+          "center": [
+            351.8011779785156,
+            252.00027465820312
+          ],
+          "width": 172.6563720703125,
+          "height": 193.83306884765625,
+          "area": 33466.51445449144,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114028_798_frame0030（另一个复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114028_798_frame0030（另一个复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114029_124_frame0032.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "yellow": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9982364177703857,
+          "bbox_xyxy": [
+            446.0916748046875,
+            157.46005249023438,
+            638.905517578125,
+            340.16387939453125
+          ],
+          "center": [
+            542.4985961914062,
+            248.8119659423828
+          ],
+          "width": 192.8138427734375,
+          "height": 182.70382690429688,
+          "area": 35227.82695483044,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9957642555236816,
+          "bbox_xyxy": [
+            266.9436950683594,
+            151.07492065429688,
+            438.9299621582031,
+            343.4122619628906
+          ],
+          "center": [
+            352.93682861328125,
+            247.24359130859375
+          ],
+          "width": 171.98626708984375,
+          "height": 192.33734130859375,
+          "area": 33079.38135365024,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9952974915504456,
+          "bbox_xyxy": [
+            125.22738647460938,
+            119.552490234375,
+            286.09197998046875,
+            280.7360534667969
+          ],
+          "center": [
+            205.65968322753906,
+            200.14427185058594
+          ],
+          "width": 160.86459350585938,
+          "height": 161.18356323242188,
+          "area": 25928.728379209526,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114029_124_frame0032.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114029_124_frame0032.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（另一个复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "yellow": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9989559650421143,
+          "bbox_xyxy": [
+            454.32916259765625,
+            160.83236694335938,
+            639.2465209960938,
+            343.6383972167969
+          ],
+          "center": [
+            546.787841796875,
+            252.23538208007812
+          ],
+          "width": 184.9173583984375,
+          "height": 182.8060302734375,
+          "area": 33804.00821746886,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9967585206031799,
+          "bbox_xyxy": [
+            275.65338134765625,
+            154.54034423828125,
+            446.26007080078125,
+            348.0546875
+          ],
+          "center": [
+            360.95672607421875,
+            251.29751586914062
+          ],
+          "width": 170.606689453125,
+          "height": 193.51434326171875,
+          "area": 33014.84146557748,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9946316480636597,
+          "bbox_xyxy": [
+            136.59127807617188,
+            122.840087890625,
+            296.2690124511719,
+            284.81744384765625
+          ],
+          "center": [
+            216.43014526367188,
+            203.82876586914062
+          ],
+          "width": 159.677734375,
+          "height": 161.97735595703125,
+          "area": 25864.17721927166,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（另一个复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（另一个复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "yellow": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9989559650421143,
+          "bbox_xyxy": [
+            454.32916259765625,
+            160.83236694335938,
+            639.2465209960938,
+            343.6383972167969
+          ],
+          "center": [
+            546.787841796875,
+            252.23538208007812
+          ],
+          "width": 184.9173583984375,
+          "height": 182.8060302734375,
+          "area": 33804.00821746886,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9967585206031799,
+          "bbox_xyxy": [
+            275.65338134765625,
+            154.54034423828125,
+            446.26007080078125,
+            348.0546875
+          ],
+          "center": [
+            360.95672607421875,
+            251.29751586914062
+          ],
+          "width": 170.606689453125,
+          "height": 193.51434326171875,
+          "area": 33014.84146557748,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9946316480636597,
+          "bbox_xyxy": [
+            136.59127807617188,
+            122.840087890625,
+            296.2690124511719,
+            284.81744384765625
+          ],
+          "center": [
+            216.43014526367188,
+            203.82876586914062
+          ],
+          "width": 159.677734375,
+          "height": 161.97735595703125,
+          "area": 25864.17721927166,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（另一个复件）（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "yellow": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9989559650421143,
+          "bbox_xyxy": [
+            454.32916259765625,
+            160.83236694335938,
+            639.2465209960938,
+            343.6383972167969
+          ],
+          "center": [
+            546.787841796875,
+            252.23538208007812
+          ],
+          "width": 184.9173583984375,
+          "height": 182.8060302734375,
+          "area": 33804.00821746886,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9967585206031799,
+          "bbox_xyxy": [
+            275.65338134765625,
+            154.54034423828125,
+            446.26007080078125,
+            348.0546875
+          ],
+          "center": [
+            360.95672607421875,
+            251.29751586914062
+          ],
+          "width": 170.606689453125,
+          "height": 193.51434326171875,
+          "area": 33014.84146557748,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9946316480636597,
+          "bbox_xyxy": [
+            136.59127807617188,
+            122.840087890625,
+            296.2690124511719,
+            284.81744384765625
+          ],
+          "center": [
+            216.43014526367188,
+            203.82876586914062
+          ],
+          "width": 159.677734375,
+          "height": 161.97735595703125,
+          "area": 25864.17721927166,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114029_468_frame0034（另一个复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114033_536_frame0043.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.996304988861084,
+          "bbox_xyxy": [
+            180.74459838867188,
+            148.3184814453125,
+            317.2749328613281,
+            347.73394775390625
+          ],
+          "center": [
+            249.009765625,
+            248.02621459960938
+          ],
+          "width": 136.53033447265625,
+          "height": 199.41546630859375,
+          "area": 27226.26031413302,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9751890897750854,
+          "bbox_xyxy": [
+            315.57928466796875,
+            162.902099609375,
+            427.85723876953125,
+            333.3507995605469
+          ],
+          "center": [
+            371.71826171875,
+            248.12644958496094
+          ],
+          "width": 112.2779541015625,
+          "height": 170.44869995117188,
+          "area": 19137.631309788674,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9699015617370605,
+          "bbox_xyxy": [
+            22.554702758789062,
+            77.60184478759766,
+            184.99853515625,
+            307.2170104980469
+          ],
+          "center": [
+            103.77661895751953,
+            192.40942764282227
+          ],
+          "width": 162.44383239746094,
+          "height": 229.61516571044922,
+          "area": 37299.56749458343,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114033_536_frame0043.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114033_536_frame0043.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114033_863_frame0045（另一个复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9893089532852173,
+          "bbox_xyxy": [
+            202.84323120117188,
+            153.876953125,
+            339.2618103027344,
+            350.51971435546875
+          ],
+          "center": [
+            271.0525207519531,
+            252.19833374023438
+          ],
+          "width": 136.4185791015625,
+          "height": 196.64276123046875,
+          "area": 26825.72607766837,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.973450779914856,
+          "bbox_xyxy": [
+            334.42291259765625,
+            170.15292358398438,
+            442.953369140625,
+            337.2835388183594
+          ],
+          "center": [
+            388.6881408691406,
+            253.71823120117188
+          ],
+          "width": 108.53045654296875,
+          "height": 167.130615234375,
+          "area": 18138.761973693967,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9686161279678345,
+          "bbox_xyxy": [
+            56.97064208984375,
+            85.62348175048828,
+            211.03897094726562,
+            304.7344970703125
+          ],
+          "center": [
+            134.0048065185547,
+            195.1789894104004
+          ],
+          "width": 154.06832885742188,
+          "height": 219.11101531982422,
+          "area": 33758.06796457828,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114033_863_frame0045（另一个复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114033_863_frame0045（另一个复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114035_071_frame0047（复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "red": 1,
+        "blue": 1,
+        "yellow": 1
+      },
+      "detections": [
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9938439130783081,
+          "bbox_xyxy": [
+            222.41464233398438,
+            250.33250427246094,
+            321.8957824707031,
+            401.5859375
+          ],
+          "center": [
+            272.15521240234375,
+            325.95922088623047
+          ],
+          "width": 99.48114013671875,
+          "height": 151.25343322753906,
+          "area": 15046.863987068646,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9935882091522217,
+          "bbox_xyxy": [
+            450.1352844238281,
+            222.5444793701172,
+            628.134521484375,
+            416.95379638671875
+          ],
+          "center": [
+            539.1349029541016,
+            319.74913787841797
+          ],
+          "width": 177.99923706054688,
+          "height": 194.40931701660156,
+          "area": 34604.71010641707,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9895657300949097,
+          "bbox_xyxy": [
+            312.6785888671875,
+            265.10443115234375,
+            443.6195068359375,
+            433.32330322265625
+          ],
+          "center": [
+            378.1490478515625,
+            349.2138671875
+          ],
+          "width": 130.94091796875,
+          "height": 168.2188720703125,
+          "area": 22026.73352855444,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114035_071_frame0047（复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114035_071_frame0047（复件）（复件）（另一个复件）（另一个复件）（复件）（复件）.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114036_771_frame0052.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "yellow": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9993231296539307,
+          "bbox_xyxy": [
+            412.97283935546875,
+            61.8865966796875,
+            640.0,
+            325.58642578125
+          ],
+          "center": [
+            526.4864196777344,
+            193.73651123046875
+          ],
+          "width": 227.02716064453125,
+          "height": 263.6998291015625,
+          "area": 59867.02346337587,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9987486600875854,
+          "bbox_xyxy": [
+            222.6477813720703,
+            116.09540557861328,
+            413.50311279296875,
+            356.76654052734375
+          ],
+          "center": [
+            318.07544708251953,
+            236.43097305297852
+          ],
+          "width": 190.85533142089844,
+          "height": 240.67113494873047,
+          "area": 45933.369224083726,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9942843317985535,
+          "bbox_xyxy": [
+            42.188812255859375,
+            93.2967529296875,
+            221.33358764648438,
+            331.124267578125
+          ],
+          "center": [
+            131.76119995117188,
+            212.21051025390625
+          ],
+          "width": 179.144775390625,
+          "height": 237.8275146484375,
+          "area": 42605.55669340491,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114036_771_frame0052.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114036_771_frame0052.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114037_036_frame0054.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "blue": 1,
+        "yellow": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9993857145309448,
+          "bbox_xyxy": [
+            412.2412109375,
+            62.869537353515625,
+            640.0,
+            320.26800537109375
+          ],
+          "center": [
+            526.12060546875,
+            191.5687713623047
+          ],
+          "width": 227.7587890625,
+          "height": 257.3984680175781,
+          "area": 58624.76338222623,
+          "selected": false
+        },
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9988769888877869,
+          "bbox_xyxy": [
+            222.17922973632812,
+            113.77767944335938,
+            411.5578308105469,
+            349.73175048828125
+          ],
+          "center": [
+            316.8685302734375,
+            231.7547149658203
+          ],
+          "width": 189.37860107421875,
+          "height": 235.95407104492188,
+          "area": 44684.65189225413,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9963157773017883,
+          "bbox_xyxy": [
+            43.050079345703125,
+            88.09886932373047,
+            221.0523681640625,
+            322.102294921875
+          ],
+          "center": [
+            132.0512237548828,
+            205.10058212280273
+          ],
+          "width": 178.00228881835938,
+          "height": 234.00342559814453,
+          "area": 41653.14534780639,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114037_036_frame0054.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114037_036_frame0054.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114038_133_frame0055.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "red": 1,
+        "blue": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9996336698532104,
+          "bbox_xyxy": [
+            404.00189208984375,
+            83.0089111328125,
+            632.4806518554688,
+            363.91259765625
+          ],
+          "center": [
+            518.2412719726562,
+            223.46075439453125
+          ],
+          "width": 228.478759765625,
+          "height": 280.9036865234375,
+          "area": 64180.52591046691,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.9975002408027649,
+          "bbox_xyxy": [
+            193.376220703125,
+            47.60589599609375,
+            402.73931884765625,
+            318.47991943359375
+          ],
+          "center": [
+            298.0577697753906,
+            183.04290771484375
+          ],
+          "width": 209.36309814453125,
+          "height": 270.8740234375,
+          "area": 56711.02475374937,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.6805962920188904,
+          "bbox_xyxy": [
+            619.8663940429688,
+            35.85986328125,
+            639.8134155273438,
+            284.63140869140625
+          ],
+          "center": [
+            629.8399047851562,
+            160.24563598632812
+          ],
+          "width": 19.947021484375,
+          "height": 248.77154541015625,
+          "area": 4962.251360997558,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114038_133_frame0055.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114038_133_frame0055.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114039_771_frame0056.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9997456669807434,
+          "bbox_xyxy": [
+            79.49311065673828,
+            54.990020751953125,
+            320.054443359375,
+            366.08367919921875
+          ],
+          "center": [
+            199.77377700805664,
+            210.53684997558594
+          ],
+          "width": 240.56133270263672,
+          "height": 311.0936584472656,
+          "area": 74837.1050714131,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9993898868560791,
+          "bbox_xyxy": [
+            303.9693603515625,
+            0.0,
+            607.1803588867188,
+            305.8154602050781
+          ],
+          "center": [
+            455.5748596191406,
+            152.90773010253906
+          ],
+          "width": 303.21099853515625,
+          "height": 305.8154602050781,
+          "area": 92726.61105627008,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.888786792755127,
+          "bbox_xyxy": [
+            0.0,
+            29.89422607421875,
+            78.873779296875,
+            339.40399169921875
+          ],
+          "center": [
+            39.4368896484375,
+            184.64910888671875
+          ],
+          "width": 78.873779296875,
+          "height": 309.509765625,
+          "area": 24412.20494413376,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114039_771_frame0056.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114039_771_frame0056.txt",
+      "crop_paths": []
+    },
+    {
+      "image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/inputs/d435_254522075719_box_20260429T114039_900_frame0057.jpg",
+      "success": true,
+      "error": null,
+      "image_width": 640,
+      "image_height": 480,
+      "object_count": 3,
+      "class_counts": {
+        "yellow": 1,
+        "blue": 1,
+        "red": 1
+      },
+      "detections": [
+        {
+          "class_id": 1,
+          "class_name": "yellow",
+          "confidence": 0.9997269511222839,
+          "bbox_xyxy": [
+            79.01998901367188,
+            57.3966064453125,
+            318.648681640625,
+            368.8507080078125
+          ],
+          "center": [
+            198.83433532714844,
+            213.1236572265625
+          ],
+          "width": 239.62869262695312,
+          "height": 311.4541015625,
+          "area": 74633.33917072415,
+          "selected": false
+        },
+        {
+          "class_id": 2,
+          "class_name": "blue",
+          "confidence": 0.9993945360183716,
+          "bbox_xyxy": [
+            302.819580078125,
+            0.0,
+            606.980224609375,
+            306.5502014160156
+          ],
+          "center": [
+            454.89990234375,
+            153.2751007080078
+          ],
+          "width": 304.16064453125,
+          "height": 306.5502014160156,
+          "area": 93240.50684387982,
+          "selected": false
+        },
+        {
+          "class_id": 0,
+          "class_name": "red",
+          "confidence": 0.8744908571243286,
+          "bbox_xyxy": [
+            0.0,
+            33.34613037109375,
+            77.56507873535156,
+            341.17529296875
+          ],
+          "center": [
+            38.78253936767578,
+            187.26071166992188
+          ],
+          "width": 77.56507873535156,
+          "height": 307.82916259765625,
+          "area": 23876.793233924545,
+          "selected": false
+        }
+      ],
+      "output_image_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/images/d435_254522075719_box_20260429T114039_900_frame0057.jpg",
+      "output_label_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/labels/d435_254522075719_box_20260429T114039_900_frame0057.txt",
+      "crop_paths": []
+    }
+  ],
+  "results_json_path": "/home/along/天链单臂/robot_api/yolo_api/inference/outputs/image_predict_20260429_185225/results.json"
+}

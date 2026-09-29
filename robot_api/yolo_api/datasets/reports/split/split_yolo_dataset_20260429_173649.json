@@ -1,0 +1,556 @@
+{
+  "image_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images",
+  "label_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels",
+  "split_root": "/home/along/天链单臂/robot_api/yolo_api/datasets/split",
+  "report_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/split",
+  "config": {
+    "image_dir": "datasets/yolo/images",
+    "label_dir": "datasets/yolo/labels",
+    "split_root": "datasets/split",
+    "report_dir": "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/split",
+    "train_ratio": 0.8,
+    "val_ratio": 0.2,
+    "test_ratio": 0.0,
+    "seed": 42,
+    "clear_output": true,
+    "exclude_empty_labels": false
+  },
+  "ratios": {
+    "train": 0.8,
+    "val": 0.2,
+    "test": 0.0
+  },
+  "seed": 42,
+  "output_prepare": {
+    "dirs": {
+      "train_images": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images",
+      "train_labels": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels",
+      "val_images": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/images",
+      "val_labels": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/labels",
+      "test_images": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/test/images",
+      "test_labels": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/test/labels"
+    },
+    "clear_output": true,
+    "cleared_count": 0,
+    "cleared_paths": []
+  },
+  "pair_report": {
+    "total_images": 34,
+    "total_labels": 33,
+    "unique_image_stems": 34,
+    "unique_label_stems": 33,
+    "candidate_paired_stems": 33,
+    "valid_pairs": 33,
+    "excluded": {
+      "images_without_labels": [
+        {
+          "stem": "d435_254522075719_box_20260429t114026_198_frame0022",
+          "image_paths": [
+            "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_198_frame0022.jpg"
+          ],
+          "reason": "图片没有对应 txt 标签，已排除"
+        }
+      ],
+      "labels_without_images": [],
+      "duplicate_image_stems": [],
+      "duplicate_label_stems": [],
+      "empty_labels_excluded": [],
+      "empty_labels_included": []
+    },
+    "excluded_counts": {
+      "images_without_labels": 1,
+      "labels_without_images": 0,
+      "duplicate_image_stems": 0,
+      "duplicate_label_stems": 0,
+      "empty_labels_excluded": 0,
+      "empty_labels_included": 0
+    }
+  },
+  "summary": {
+    "valid_pairs": 33,
+    "train_count": 26,
+    "val_count": 6,
+    "test_count": 1,
+    "total_copied": 33
+  },
+  "splits": {
+    "train": [
+      {
+        "stem": "d435_254522075719_box_20260429t114028_392_frame0029",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114028_392_frame0029.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114028_392_frame0029.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_057_frame0006",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_057_frame0006.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_057_frame0006.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_130_frame0012",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_130_frame0012.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_130_frame0012.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_061_frame0017",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_061_frame0017.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_061_frame0017.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114027_796_frame0028",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114027_796_frame0028.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114027_796_frame0028.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_323_frame0013",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_323_frame0013.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_323_frame0013.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_797_frame0021",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_797_frame0021.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_797_frame0021.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_853_frame0016",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_853_frame0016.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_853_frame0016.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_921_frame0011",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_921_frame0011.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_921_frame0011.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_656_frame0015",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_656_frame0015.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_656_frame0015.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_541_frame0020",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_541_frame0020.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_541_frame0020.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_601_frame0024",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_601_frame0024.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_601_frame0024.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_729_frame0010",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_729_frame0010.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_729_frame0010.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114028_990_frame0031",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114028_990_frame0031.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114028_990_frame0031.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_989_frame0026",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_989_frame0026.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_989_frame0026.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_190_frame0007",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_190_frame0007.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_190_frame0007.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114027_395_frame0027",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114027_395_frame0027.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114027_395_frame0027.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114021_922_frame0001",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114021_922_frame0001.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114021_922_frame0001.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114029_276_frame0033",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114029_276_frame0033.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114029_276_frame0033.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_464_frame0014",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_464_frame0014.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_464_frame0014.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_389_frame0019",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_389_frame0019.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_389_frame0019.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114022_457_frame0003",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_457_frame0003.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_457_frame0003.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_194_frame0018",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_194_frame0018.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_194_frame0018.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_391_frame0023",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_391_frame0023.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_391_frame0023.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114022_658_frame0004",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_658_frame0004.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_658_frame0004.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114029_124_frame0032",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114029_124_frame0032.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114029_124_frame0032.txt",
+        "label_empty": false
+      }
+    ],
+    "val": [
+      {
+        "stem": "d435_254522075719_box_20260429t114022_853_frame0005",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_853_frame0005.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_853_frame0005.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114028_798_frame0030",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114028_798_frame0030.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114028_798_frame0030.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114029_468_frame0034",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114029_468_frame0034.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114029_468_frame0034.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_521_frame0009",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_521_frame0009.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_521_frame0009.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_795_frame0025",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_795_frame0025.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_795_frame0025.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114022_259_frame0002",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_259_frame0002.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_259_frame0002.txt",
+        "label_empty": false
+      }
+    ],
+    "test": [
+      {
+        "stem": "d435_254522075719_box_20260429t114023_386_frame0008",
+        "image_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_386_frame0008.jpg",
+        "label_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_386_frame0008.txt",
+        "label_empty": false
+      }
+    ]
+  },
+  "copied": {
+    "train": [
+      {
+        "stem": "d435_254522075719_box_20260429t114028_392_frame0029",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114028_392_frame0029.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114028_392_frame0029.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114028_392_frame0029.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114028_392_frame0029.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_057_frame0006",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_057_frame0006.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_057_frame0006.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114023_057_frame0006.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114023_057_frame0006.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_130_frame0012",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_130_frame0012.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_130_frame0012.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114024_130_frame0012.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114024_130_frame0012.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_061_frame0017",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_061_frame0017.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_061_frame0017.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114025_061_frame0017.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114025_061_frame0017.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114027_796_frame0028",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114027_796_frame0028.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114027_796_frame0028.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114027_796_frame0028.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114027_796_frame0028.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_323_frame0013",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_323_frame0013.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_323_frame0013.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114024_323_frame0013.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114024_323_frame0013.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_797_frame0021",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_797_frame0021.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_797_frame0021.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114025_797_frame0021.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114025_797_frame0021.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_853_frame0016",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_853_frame0016.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_853_frame0016.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114024_853_frame0016.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114024_853_frame0016.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_921_frame0011",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_921_frame0011.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_921_frame0011.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114023_921_frame0011.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114023_921_frame0011.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_656_frame0015",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_656_frame0015.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_656_frame0015.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114024_656_frame0015.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114024_656_frame0015.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_541_frame0020",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_541_frame0020.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_541_frame0020.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114025_541_frame0020.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114025_541_frame0020.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_601_frame0024",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_601_frame0024.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_601_frame0024.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114026_601_frame0024.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114026_601_frame0024.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_729_frame0010",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_729_frame0010.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_729_frame0010.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114023_729_frame0010.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114023_729_frame0010.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114028_990_frame0031",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114028_990_frame0031.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114028_990_frame0031.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114028_990_frame0031.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114028_990_frame0031.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_989_frame0026",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_989_frame0026.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_989_frame0026.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114026_989_frame0026.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114026_989_frame0026.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_190_frame0007",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_190_frame0007.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_190_frame0007.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114023_190_frame0007.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114023_190_frame0007.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114027_395_frame0027",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114027_395_frame0027.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114027_395_frame0027.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114027_395_frame0027.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114027_395_frame0027.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114021_922_frame0001",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114021_922_frame0001.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114021_922_frame0001.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114021_922_frame0001.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114021_922_frame0001.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114029_276_frame0033",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114029_276_frame0033.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114029_276_frame0033.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114029_276_frame0033.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114029_276_frame0033.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114024_464_frame0014",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114024_464_frame0014.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114024_464_frame0014.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114024_464_frame0014.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114024_464_frame0014.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_389_frame0019",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_389_frame0019.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_389_frame0019.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114025_389_frame0019.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114025_389_frame0019.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114022_457_frame0003",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_457_frame0003.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_457_frame0003.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114022_457_frame0003.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114022_457_frame0003.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114025_194_frame0018",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114025_194_frame0018.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114025_194_frame0018.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114025_194_frame0018.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114025_194_frame0018.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_391_frame0023",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_391_frame0023.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_391_frame0023.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114026_391_frame0023.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114026_391_frame0023.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114022_658_frame0004",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_658_frame0004.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_658_frame0004.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114022_658_frame0004.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114022_658_frame0004.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114029_124_frame0032",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114029_124_frame0032.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114029_124_frame0032.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/images/d435_254522075719_box_20260429T114029_124_frame0032.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/train/labels/d435_254522075719_box_20260429T114029_124_frame0032.txt",
+        "label_empty": false
+      }
+    ],
+    "val": [
+      {
+        "stem": "d435_254522075719_box_20260429t114022_853_frame0005",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_853_frame0005.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_853_frame0005.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/images/d435_254522075719_box_20260429T114022_853_frame0005.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/labels/d435_254522075719_box_20260429T114022_853_frame0005.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114028_798_frame0030",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114028_798_frame0030.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114028_798_frame0030.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/images/d435_254522075719_box_20260429T114028_798_frame0030.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/labels/d435_254522075719_box_20260429T114028_798_frame0030.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114029_468_frame0034",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114029_468_frame0034.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114029_468_frame0034.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/images/d435_254522075719_box_20260429T114029_468_frame0034.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/labels/d435_254522075719_box_20260429T114029_468_frame0034.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114023_521_frame0009",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_521_frame0009.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_521_frame0009.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/images/d435_254522075719_box_20260429T114023_521_frame0009.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/labels/d435_254522075719_box_20260429T114023_521_frame0009.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114026_795_frame0025",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114026_795_frame0025.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114026_795_frame0025.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/images/d435_254522075719_box_20260429T114026_795_frame0025.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/labels/d435_254522075719_box_20260429T114026_795_frame0025.txt",
+        "label_empty": false
+      },
+      {
+        "stem": "d435_254522075719_box_20260429t114022_259_frame0002",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114022_259_frame0002.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114022_259_frame0002.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/images/d435_254522075719_box_20260429T114022_259_frame0002.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/val/labels/d435_254522075719_box_20260429T114022_259_frame0002.txt",
+        "label_empty": false
+      }
+    ],
+    "test": [
+      {
+        "stem": "d435_254522075719_box_20260429t114023_386_frame0008",
+        "src_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/images/d435_254522075719_box_20260429T114023_386_frame0008.jpg",
+        "src_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/yolo/labels/d435_254522075719_box_20260429T114023_386_frame0008.txt",
+        "dst_image": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/test/images/d435_254522075719_box_20260429T114023_386_frame0008.jpg",
+        "dst_label": "/home/along/天链单臂/robot_api/yolo_api/datasets/split/test/labels/d435_254522075719_box_20260429T114023_386_frame0008.txt",
+        "label_empty": false
+      }
+    ]
+  },
+  "created_at": "2026-04-29T17:36:49",
+  "report_path": "/home/along/天链单臂/robot_api/yolo_api/datasets/reports/split/split_yolo_dataset_20260429_173649.json"
+}

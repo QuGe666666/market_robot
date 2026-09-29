@@ -1,0 +1,6 @@
+string name
+int32 marker_type
+int32 marker_num
+---
+bool success
+string message

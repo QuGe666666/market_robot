@@ -1,0 +1,16 @@
+float64 target_mm
+int32 max_speed_dps
+float64 timeout_s
+float64 tolerance_mm
+---
+bool success
+string message
+float64 final_pos_mm
+bool estop
+---
+float64 current_pos_mm
+float64 speed_dps
+float64 error_mm
+string mode
+bool busy
+bool estop

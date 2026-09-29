@@ -1,0 +1,27 @@
+/**:
+  ros__parameters:
+    arm: right
+    script_path: /home/lh/robot/src/supermarket_grasp_ros2/scripts/grasp.py
+    resident_worker_path: /home/lh/robot/src/supermarket_grasp_ros2/scripts/grasp_resident_worker.py
+    runtime_config: /home/lh/robot/src/supermarket_grasp_ros2/config/grasp_runtime.json
+    python_executable: /home/lh/miniconda3/envs/grasp/bin/python
+    extra_args: "--open y --align-base-z y --select-best 3"
+    grasp_source: graspnet
+    planner_backend: curobo
+    native_execute: false
+    native_execution_token: ""
+    native_speed: 10
+    auto_trigger: false
+    resident_mode: true
+    use_ros_frame: true
+    color_topic: /camera/camera/color/image_raw
+    depth_topic: /camera/camera/aligned_depth_to_color/image_raw
+    camera_info_topic: /camera/camera/aligned_depth_to_color/camera_info
+    detection_topic: /qwen_vl/right/result
+    qwen_accept_only: true
+    depth_scale: 0.001
+    detection_timeout_s: 5.0
+    frame_timeout_s: 5.0
+    frame_sync_tolerance_s: 0.25
+    target_label: ""
+    min_detection_confidence: 0.0

@@ -1,0 +1,6 @@
+---
+bool success
+string message
+bool overall_ok
+int32 failed_count
+string results_json

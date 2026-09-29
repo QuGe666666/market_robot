@@ -1,0 +1,88 @@
+fsm:
+  tick_period_s: 0.1
+  default_state_timeout_s: 180.0
+  max_retry: 2
+  navigation_retry: 3
+  recognition_attempts: 2
+  object_count: 4
+  base_retreat_m: 0.50
+  arrival_frame_prefix: "ARRIVED_"
+  timeouts_s:
+    init: 180.0
+    task_validation: 5.0
+    navigation: 300.0
+    lift: 30.0
+    arm: 30.0
+    camera: 10.0
+    perception: 45.0
+    qwen: 180.0
+    graspnet: 180.0
+    curobo: 180.0
+    gripper: 15.0
+    verify: 15.0
+  navigation:
+    distance_tolerance_m: 0.20
+    theta_tolerance_rad: 0.35
+    max_continuous_retries: 3
+    start_point: "A"
+  lift:
+    speed: 50
+    tolerance_mm: 5
+    empty_box_transport_height_mm: 150
+    box_release_height_mm: 50
+    object_place_height_mm: 300
+    object_release_height_mm: 200
+    object_finish_height_mm: 50
+  arm:
+    movej_speed: 20
+    slow_approach_mps: 0.03
+  gripper:
+    position_tolerance: 5
+    grasp_success_position: 10
+    loaded_box_grasp_min_position: 10
+  perception:
+    yolo_confidence_thresh: 0.3
+    # Wait after navigation arrival/arm settling before starting YOLO.
+    perception_settle_delay_s: 2.0
+    yolo_max_inference_fps: 5.0
+    qwen_temporal_required_votes: 1
+    retry_order: ["YOLO", "QWEN", "CAMERA_REFRESH"]
+  grasp:
+    detection_timeout_s: 5.0
+    frame_sync_tolerance_s: 0.25
+    # Non-box grasp orbit test angle. The previous 60-degree behavior is
+    # preserved by changing this value back to 60 when needed.
+    non_box_grasp_angle_deg: 80
+    extra_args: "--open y --align-base-z y --select-best 3"
+    require_ik_pass: true
+    require_collision_pass: true
+    require_trajectory_success: true
+  curobo:
+    max_attempts: 30
+    staged_grasp: true
+    high_following: true
+    interpolation_dt: 0.008
+    enable_nvblox: false
+    voxel_size: 0.015
+    collision_margin: 0.02
+  safety:
+    execution_token: "I_UNDERSTAND_REAL_ROBOT_MOTION"
+    hold_grippers_on_error: true
+    never_open_grippers_on_error: true
+    forbid_lift_with_arm_extended: true
+    forbid_base_with_arm_extended: true
+    require_dual_arm_barrier: true
+  base_retreat_speed_mps: 0.104
+  base_rotate_speed: 0.30
+  resources:
+    - BASE
+    - LIFT
+    - LEFT_ARM
+    - RIGHT_ARM
+    - LEFT_GRIPPER
+    - RIGHT_GRIPPER
+    - LEFT_CAMERA
+    - RIGHT_CAMERA
+    - GPU_QWEN
+    - GPU_GRASPNET
+    - GPU_CUROBO

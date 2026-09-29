@@ -1,0 +1,86 @@
+{
+  "web": {
+    "host": "127.0.0.1",
+    "port": 8000,
+    "api_token": "123456",
+    "ws_push_period_s": 0.2
+  },
+  "legacy_aliases": {
+    "motor": "lift_z",
+    "gripper": "left_gripper"
+  },
+  "devices": [
+    {
+      "id": "lift_z",
+      "display_name": "升降轴 Z",
+      "kind": "lift",
+      "driver": "leesn_modbus",
+      "enabled": true,
+      "port": "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_BG01DLWP-if00-port0",
+      "motor_id": 7,
+      "baudrate": 115200,
+      "limits": {
+        "low_mm": -50.0,
+        "high_mm": 50.0
+      },
+      "mechanics": {
+        "pulley_in": 32.0,
+        "pulley_out": 24.0,
+        "screw_lead_mm": 8.0,
+        "motor_gear_ratio": 8.0,
+        "invert_dir": true
+      },
+      "ui": {
+        "group": "升降机构",
+        "order": 10,
+        "visible": true
+      }
+    },
+    {
+      "id": "left_gripper",
+      "display_name": "左夹爪",
+      "kind": "gripper",
+      "driver": "eg2_modbus",
+      "enabled": false,
+      "port": "COM13",
+      "gripper_id": 1,
+      "baudrate": 115200,
+      "max_open_mm": 70.0,
+      "ui": {
+        "group": "末端执行器",
+        "order": 20,
+        "visible": false
+      }
+    },
+    {
+      "id": "right_gripper",
+      "display_name": "右夹爪示例",
+      "kind": "gripper",
+      "driver": "eg2_modbus",
+      "enabled": false,
+      "port": "COM14",
+      "gripper_id": 1,
+      "baudrate": 115200,
+      "max_open_mm": 70.0,
+      "ui": {
+        "group": "末端执行器",
+        "order": 21,
+        "visible": false
+      }
+    },
+    {
+      "id": "right_vacuum",
+      "display_name": "右吸盘示例",
+      "kind": "vacuum",
+      "driver": "fangong_serial",
+      "enabled": false,
+      "port": "COM15",
+      "slave_id": 1,
+      "ui": {
+        "group": "末端执行器",
+        "order": 30,
+        "visible": false
+      }
+    }
+  ]
+}

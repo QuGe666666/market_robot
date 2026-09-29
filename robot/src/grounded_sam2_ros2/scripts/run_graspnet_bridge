@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+exec /home/lh/miniconda3/envs/grasp/bin/python -m grounded_sam2_ros2.graspnet_bridge "$@"

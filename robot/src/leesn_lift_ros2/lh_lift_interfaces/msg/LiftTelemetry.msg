@@ -1,0 +1,13 @@
+std_msgs/Header header
+bool enabled
+float64 pos_mm
+float64 speed_dps
+float64 temp_c
+float64 low_mm
+float64 high_mm
+float64 angle_deg
+int64 encoder
+string mode
+bool busy
+bool estop
+string last_error

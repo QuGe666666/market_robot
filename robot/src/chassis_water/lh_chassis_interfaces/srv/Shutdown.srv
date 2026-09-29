@@ -1,0 +1,6 @@
+bool reboot
+int32 delay
+---
+bool success
+string message
+bool reconnect_expected

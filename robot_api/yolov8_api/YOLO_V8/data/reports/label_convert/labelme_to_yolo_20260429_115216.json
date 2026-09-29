@@ -1,0 +1,19 @@
+{
+  "image_dir": "/tmp/yolo_labelme_demo/images",
+  "json_dir": "/tmp/yolo_labelme_demo/json",
+  "output_label_dir": "/tmp/yolo_labelme_demo/yolo",
+  "classes_yaml_path": "/tmp/yolo_labelme_demo/classes.yaml",
+  "class_names": [
+    "bag",
+    "box"
+  ],
+  "summary": {
+    "json_count": 1,
+    "converted_count": 1,
+    "skipped_count": 0,
+    "total_boxes": 2
+  },
+  "errors": [],
+  "warnings": [],
+  "converted_at": "2026-04-29T11:52:16"
+}

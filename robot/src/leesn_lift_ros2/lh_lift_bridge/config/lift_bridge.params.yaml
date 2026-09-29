@@ -1,0 +1,10 @@
+lh_lift_bridge:
+  ros__parameters:
+    base_url: "http://127.0.0.1:8000"
+    api_token: "123456"
+    request_timeout_s: 3.0
+    telemetry_hz: 5.0
+    error_poll_hz: 2.0
+    move_poll_dt_s: 0.2
+    default_move_timeout_s: 60.0
+    default_move_speed_dps: 1200

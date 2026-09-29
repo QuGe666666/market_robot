@@ -1,0 +1,10 @@
+string name
+int32 marker_type
+int32 marker_num
+int32 floor
+float64 x
+float64 y
+float64 theta
+---
+bool success
+string message

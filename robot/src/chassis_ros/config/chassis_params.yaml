@@ -1,0 +1,13 @@
+# chassis_ros 参数配置
+
+# 监控节点
+monitor_interval: 2.0
+monitor_verbose: false
+
+# 速度控制节点
+twist_rate: 10.0
+twist_max_linear: 1.0
+twist_max_angular: 1.0
+
+# API 默认参数
+api_qos_depth: 10

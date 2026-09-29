@@ -1,0 +1,20 @@
+{
+  "image_dir": "/home/along/天链单臂/robot_api/yolov8_api/YOLO_V8/data/labeled/images",
+  "json_dir": "/home/along/天链单臂/robot_api/yolov8_api/YOLO_V8/data/labeled/labels",
+  "output_label_dir": "/home/along/天链单臂/robot_api/yolov8_api/YOLO_V8/data/labeled/labels",
+  "classes_yaml_path": "/home/along/天链单臂/robot_api/yolov8_api/YOLO_V8/data/configs/classes.yaml",
+  "class_names": [
+    "red",
+    "yellow",
+    "blue"
+  ],
+  "summary": {
+    "json_count": 34,
+    "converted_count": 34,
+    "skipped_count": 0,
+    "total_boxes": 99
+  },
+  "errors": [],
+  "warnings": [],
+  "converted_at": "2026-04-29T15:02:43"
+}

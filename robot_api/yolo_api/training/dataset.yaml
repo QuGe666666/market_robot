@@ -1,0 +1,10 @@
+path: /home/along/天链单臂/robot_api/yolo_api/datasets/split
+train: train/images
+val: val/images
+test: test/images
+nc: 3
+names:
+  0: red
+  1: yellow
+  2: blue
+task: detect

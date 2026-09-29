@@ -1,0 +1,7 @@
+---
+bool success
+string message
+string version_current
+string version_latest
+bool enable_update
+string results_json

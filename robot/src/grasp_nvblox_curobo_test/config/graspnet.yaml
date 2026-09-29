@@ -1,0 +1,20 @@
+/**:
+  ros__parameters:
+    depth_topic: /right_camera/right_camera/aligned_depth_to_color/image_raw
+    camera_info_topic: /right_camera/right_camera/aligned_depth_to_color/camera_info
+    mask_topic: /grounded_sam2/right/mask
+    output_topic: /grasp_pose_camera
+    status_topic: /planning_test/graspnet_status
+    camera_frame: right_camera_color_optical_frame
+    cache_size: 450
+    mask_rank: 1
+    depth_scale: 0.001
+    min_depth_m: 0.15
+    max_depth_m: 1.50
+    random_seed: 7
+    graspnet_checkpoint: /home/lh/Supermarket/graspnet-baseline/checkpoint-rs.tar
+    graspnet_num_point: 20000
+    graspnet_num_view: 300
+    graspnet_collision_thresh: 0.01
+    graspnet_voxel_size: 0.01
+    graspnet_top_k: 20

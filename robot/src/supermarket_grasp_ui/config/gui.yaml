@@ -1,0 +1,27 @@
+window:
+  title: "双臂机器人比赛控制台"
+  default_width: 1674
+  default_height: 941
+  image_refresh_hz: 5
+  log_cache_limit: 3000
+
+topics:
+  task: /competition/task
+  control: /competition/control
+  competition_status: /competition/status
+  pick_status: /supermarket_pick/status
+  head_color: /camera/camera/color/image_raw
+  head_depth: /camera/camera/aligned_depth_to_color/image_raw
+
+services:
+  start: /competition/start
+  pause: /competition/pause
+  resume: /competition/resume
+  stop: /competition/stop
+  reset: /competition/reset
+
+integration:
+  keyframe_arrival_prefix: competition_arrival_
+  navigation_route: [B, C, D, E, F, G, A]
+  camera_fps_warning: 10
+  stale_status_seconds: 2.0

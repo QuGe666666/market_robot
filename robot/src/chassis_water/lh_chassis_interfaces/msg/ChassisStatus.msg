@@ -1,0 +1,16 @@
+std_msgs/Header header
+string move_target
+string move_status
+string running_status
+int32 move_retry_times
+bool charge_state
+bool soft_estop_state
+bool hard_estop_state
+bool estop_state
+int32 power_percent
+float64 x
+float64 y
+float64 theta
+int32 current_floor
+string chargepile_id
+string error_code
