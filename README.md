@@ -21,6 +21,7 @@
 - 推荐 Ubuntu 22.04、ROS 2 Humble，并按设备情况安装 RealMan、Intel RealSense、CuRobo、GraspNet、Qwen/YOLO、Qt 等依赖。
 - 部分源码和启动配置保留了原开发机的绝对路径（例如 `/home/lh/robot`、`/home/lh/Supermarket`）。换机部署时需放到相应路径，或先调整路径、设备地址、相机序列号与标定配置。
 - RealSense ROS 源码、CuRobo/GraspNet/Ultralytics 的上游副本、模型权重以及部分设备 SDK 的编译库没有随本快照重复上传；需按项目子目录说明另行安装或提供。
+- 现有比赛配置还引用 `/home/lh/robot/src/best.pt` 和 `/home/lh/robot/models/qwen2_5_vl/Qwen2.5-VL-7B-Instruct`。这两处是运行时模型文件，**不在本仓库内**。`robot/build/` 与 `robot/install/` 由 `colcon build` 重新生成；`results/`、`runtime_logs/` 和 `validation_results/` 是运行输出。
 
 在已安装依赖的环境中编译 ROS 2 工作空间：
 
